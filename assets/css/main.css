@@ -3,3 +3,16 @@
 body {
     font-family: "Overpass", sans-serif;
 }
+
+#main-section {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#landing-page-header {
+    font-size: 4em;
+    font-weight: 400;
+}
+
+#landing-page-subheader {
+    font-weight: 400;
+}
