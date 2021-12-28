@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 html, body {
     width: 100%;
@@ -9,7 +9,7 @@ html, body {
 }
 
 body {
-    font-family: "Overpass", sans-serif;
+    font-family: "Inter", sans-serif;
 }
 
 #main-section {
