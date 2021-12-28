@@ -12,8 +12,19 @@ body {
     font-family: "Inter", sans-serif;
 }
 
+#navbar-brand-logo {
+    height: 2em;
+    padding: 0.5em;
+}
+
 #main-section {
     background: rgba(17, 15, 15, 1);
+    height: calc(100vh - 3.5em);
+    width: 100vw;
+}
+
+#landing-page {
+    min-height: 100%;
 }
 
 #landing-page-header {
@@ -23,8 +34,4 @@ body {
 #landing-page-header, #landing-page-subheader {
     font-weight: 400;
     text-shadow: 0px 0px 3px rgba(0,0,0,0.3);
-}
-
-.nav-item {
-    padding-top: 0.3em;
 }
