@@ -18,13 +18,12 @@ body {
 }
 
 #main-section {
+    display: flex;
     background: rgba(17, 15, 15, 1);
     min-height: calc(100vh - 3.5em);
+    justify-content: center;
+    align-items: center;
     width: 100vw;
-}
-
-#landing-page {
-    min-height: 100%;
 }
 
 #landing-page-header {
