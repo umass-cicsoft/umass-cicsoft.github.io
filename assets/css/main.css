@@ -19,7 +19,7 @@ body {
 
 #main-section {
     background: rgba(17, 15, 15, 1);
-    height: calc(100vh - 3.5em);
+    min-height: calc(100vh - 3.5em);
     width: 100vw;
 }
 
