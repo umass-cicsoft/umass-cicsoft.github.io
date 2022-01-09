@@ -12,8 +12,18 @@ body {
     font-family: "Inter", sans-serif;
 }
 
+#navbar-brand-logo {
+    height: 2em;
+    padding: 0.5em;
+}
+
 #main-section {
+    display: flex;
     background: rgba(17, 15, 15, 1);
+    min-height: calc(100vh - 3.5em);
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
 }
 
 #landing-page-header {
