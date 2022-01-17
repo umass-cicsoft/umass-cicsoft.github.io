@@ -86,7 +86,117 @@
         <!-- BEGIN Apply Section -->
         <div id="apply" class="section">
             <!-- INSERT YOUR CODE HERE FOR THE APPLY SECTION -->
-            <h1>"APPLY" PLACEHOLDER</h1>
+            <div class="form-container">
+                <form>
+                    <div class="row">
+                        <div class="col-md mb-3">
+                            <label for="applyFirstName" class="form-label">First Name <span style="color: red">*</span></label>
+                            <input required type="text" class="form-control" id="applyFirstName" placeholder="J." />
+                        </div>
+                        <div class="col-md mb-3">
+                            <label for="applyLastName" class="form-label">Last Name <span style="color: red">*</span></label>
+                            <input required type="text" class="form-control" id="applyLastName" placeholder="Doe" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md mb-3">
+                            <label for="applyEmail" class="form-label">UMass Email <span style="color: red">*</span></label>
+                            <input required type="email" class="form-control" id="applyEmail" placeholder="jdoe@umass.edu" aria-describedby="emailHelp" />
+                        </div>
+                        <div class="col-md mb-3">
+                            <label for="applyGraduationYear" class="form-label">Graduation Year <span style="color: red">*</span></label>
+                            <select required class="form-select" aria-label="Graduation Year Selection">
+                                <option disabled selected>Select your graduation year</option>
+                                <option value="2022">2022</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="applyMajors" class="form-label">Major(s) <span style="color: red">*</span></label>
+                        <div class="row">
+                            <div class="col-lg">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch" value="computerScience" id="majorComputerScience" />
+                                    <label class="form-check-label" for="majorComputerScience"> Computer Science </label>
+                                </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch" value="computerEngineering" id="majorComputerEngineering" />
+                                    <label class="form-check-label" for="majorComputerEngineering"> Computer Engineering </label>
+                                </div>
+                            </div>
+                            <div class="col-lg">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch" value="mathematics" id="majorMathematics" />
+                                    <label class="form-check-label" for="majorMathematics"> Mathematics </label>
+                                </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch" value="informatics" id="majorInformatics" />
+                                    <label class="form-check-label" for="majorInformatics"> Informatics </label>
+                                </div>
+                            </div>
+                            <div class="col-lg">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch" value="other" id="majorOther" />
+                                    <label class="form-check-label" for="majorOther"> Other </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md mb-3">
+                            <label for="applyGitHub" class="form-label">GitHub Link</label>
+                            <input type="url" class="form-control" id="applyGitHub" placeholder="github.com/jdoe" />
+                        </div>
+                        <div class="col-md mb-3">
+                            <label for="applyLinkedIn" class="form-label">LinkedIn Link</label>
+                            <input type="url" class="form-control" id="applyLinkedIn" placeholder="linkedin.com/in/jdoe" />
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="applyQuestion" class="form-label">Why are you interested in joining CICSoft? <span style="color: red">*</span></label>
+                        <textarea required class="form-control" id="applyQuestion" placeholder="I want to learn more about ..."></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="applyReferral" class="form-label">How did you hear about us? <span style="color: red">*</span></label>
+                        <div class="row">
+                            <div class="col-lg">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="referral" value="instagram" id="referralInstagram" />
+                                    <label class="form-check-label" for="referralInstagram"> Instagram </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="referral" value="discord" id="referralDiscord" />
+                                    <label class="form-check-label" for="referralDiscord"> Discord </label>
+                                </div>
+                            </div>
+                            <div class="col-lg">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="referral" value="cicsoftWebsite" id="referralCicsoftWebsite" />
+                                    <label class="form-check-label" for="referralCicsoftWebsite"> CICSoft Website </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="referral" value="cicsoftMember" id="referralCicsoftMember" />
+                                    <label class="form-check-label" for="referralCicsoftMember"> CICSoft Member </label>
+                                </div>
+                            </div>
+                            <div class="col-lg">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="referral" value="cicsNewsletter" id="referralCicsNewsletter" />
+                                    <label class="form-check-label" for="referralCicsNewsletter"> CICS Newsletter </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="referral" value="friends" id="referralFriends" />
+                                    <label class="form-check-label" for="referralFriends"> Friend(s) </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
         </div>
         <!-- END Apply Section -->
 
