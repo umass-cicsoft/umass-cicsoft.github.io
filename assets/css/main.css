@@ -16,6 +16,7 @@ body {
 
 #navbar-container {
     position: fixed;
+    z-index: 1;
     background-color: #211d1e;
 }
 
@@ -43,10 +44,22 @@ body {
 
 .section {
     display: flex;
+    flex-direction: column;
     min-height: 100vh;
     justify-content: center;
     align-items: center;
     width: 100vw;
+}
+
+.section-header {
+    display: flex;
+    padding: 1.5rem;
+    margin: 1.5rem;
+    background-color: #211d1e;
+    color:rgb(255, 255, 255);
+    font-size: 3rem;
+    border-radius: 1.5em;
+    font-family: "Lexend";
 }
 
 #home {
@@ -89,7 +102,9 @@ body {
 }
 
 #about {
-    background-color: purple;
+    background-image: url("../svg/about_bg.svg");
+    background-size: cover;
+    padding-top: 3.5em;
     color: white;
 }
 
@@ -103,18 +118,42 @@ body {
 }
 
 #apply {
-    background-color: yellowgreen;
+}
+
+.form-container {
+    color: white;
+    background-color: #110f0f;
+    min-width: 70vw;
+    max-width: 90vw;
+    padding: 2rem;
+    margin: 2rem;
+    border-radius: 0.5rem;
+}
+
+#applyQuestion {
+    height: 8em;
+    resize: none;
 }
 
 #faqs {
     background-color:gold;
 }
 
-#team {
-    background-color: orange;
+.card-caption {
+    background-color: white;
+    color: #211d1e;
+    padding: 0.5rem;
+    margin: 0;
+    border-radius: 0.25rem;
 }
 
 #contact {
     background-color: firebrick;
     color: white;
+}
+
+hr.fade1 {
+    border: none;
+    height: 1px;
+    background-image: linear-gradient(to right, rgb(72, 136, 155), darkblue, rgb(72, 136, 155));
 }
