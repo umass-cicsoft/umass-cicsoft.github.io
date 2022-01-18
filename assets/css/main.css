@@ -125,5 +125,5 @@ body {
 hr.fade1 {
     border: none;
     height: 1px;
-    background-image: linear-gradient(to right, cyan, darkblue, cyan);
+    background-image: linear-gradient(to right, rgb(72, 136, 155), darkblue, rgb(72, 136, 155));
 }
