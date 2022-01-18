@@ -89,7 +89,9 @@ body {
 }
 
 #about {
-    background-color: purple;
+    background-image: url("../svg/about_bg.svg");
+    background-size: cover;
+    padding-top: 3.5em;
     color: white;
 }
 
@@ -118,4 +120,10 @@ body {
 #contact {
     background-color: firebrick;
     color: white;
+}
+
+hr.fade1 {
+    border: none;
+    height: 1px;
+    background-image: linear-gradient(to right, rgb(72, 136, 155), darkblue, rgb(72, 136, 155));
 }
