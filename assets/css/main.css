@@ -119,7 +119,21 @@ body {
 }
 
 #apply {
-    background-color: yellowgreen;
+}
+
+.form-container {
+    color: white;
+    background-color: #110f0f;
+    min-width: 70vw;
+    max-width: 90vw;
+    padding: 2rem;
+    margin: 2rem;
+    border-radius: 0.5rem;
+}
+
+#applyQuestion {
+    height: 8em;
+    resize: none;
 }
 
 #faqs {
