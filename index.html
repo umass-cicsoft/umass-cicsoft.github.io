@@ -11,6 +11,10 @@
         />
         <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
         <link rel="stylesheet" href="./assets/css/main.css" />
+        <link rel="stylesheet" href="./assets/css/slider.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
         <link rel="icon" href="favicon.ico" />
     </head>
     <body>
@@ -67,26 +71,32 @@
         <div id="about" class="section" style="font-family: Lexend">
             <div class="container-fiuld">
                 <h2 class="page-section-heading text-center text-white">About</h2>
-                
+
                 <div class="row">
                     <div class="col-sm-10 mx-auto">
                         <p class="lead">
-                            CICSoft provides a collaborative environment for members to enhance their technical capabilities while developing applications. CICSoft creates an atmosphere for students to learn application development from the ground up through weekly sessions. Our Lab division aims to develop and publish next-generation apps for UMass and the greater community. Join CICSoft's Annual Appathon to turn your concept into a reality. 
+                            CICSoft provides a collaborative environment for members to enhance their technical capabilities while developing applications. CICSoft creates an
+                            atmosphere for students to learn application development from the ground up through weekly sessions. Our Lab division aims to develop and publish
+                            next-generation apps for UMass and the greater community. Join CICSoft's Annual Appathon to turn your concept into a reality.
                         </p>
-                        <hr class="fade1">
+                        <hr class="fade1" />
                     </div>
                 </div>
                 <div class="row mt-3 justify-content-evenly">
                     <div class="col-sm-4">
                         <h4 class="page-section-heading text-center text-white"><small>Weekly Sessions</small></h4>
                         <p class="lead">
-                            We aim to teach students to build great apps regardless of their major and field. CICSoft aims to enhance students’ technical skills and bring their ideas to life by teaching native software like Android studio and XCode as well as cutting-edge technologies like Flutter. Besides a spoonful of compassion, CICSoft does not require any prior experience or skill.
+                            We aim to teach students to build great apps regardless of their major and field. CICSoft aims to enhance students’ technical skills and bring their
+                            ideas to life by teaching native software like Android studio and XCode as well as cutting-edge technologies like Flutter. Besides a spoonful of
+                            compassion, CICSoft does not require any prior experience or skill.
                         </p>
                     </div>
                     <div class="col-sm-4">
                         <h4 class="page-section-heading text-center text-white"><small>CICSoft Lab</small></h4>
                         <p class="lead">
-                            Our mission is to create amazing apps for UMass and the surrounding community, in the spirit of Manning CICS' goal of "computing for the common good". Each year, lab developers will be hired to work on certain projects throughout the year. We expect lab developers to have some experience, which they would gain as a member!
+                            Our mission is to create amazing apps for UMass and the surrounding community, in the spirit of Manning CICS' goal of "computing for the common good".
+                            Each year, lab developers will be hired to work on certain projects throughout the year. We expect lab developers to have some experience, which they
+                            would gain as a member!
                         </p>
                     </div>
                 </div>
@@ -105,7 +115,114 @@
         <!-- BEGIN Syllabus Section -->
         <div id="syllabus" class="section">
             <!-- INSERT YOUR CODE HERE FOR THE SYLLABUS SECTION -->
-            <h1>"SYLLABUS" PLACEHOLDER</h1>
+            <div id="syllabus" class="section">
+                <!-- INSERT YOUR CODE HERE FOR THE SYLLABUS SECTION -->
+                <div class="carousel owl-carousel">
+                    <div class="card">
+                        <div class="syllabus"><img src="./assets/img/syllabus/0.png" /></div>
+                    </div>
+                    <div class="card">
+                        <p class="week-schedule">WEEK 1-2</p>
+                        <img src="./assets/img/syllabus/1.png" />
+                        <div class="details">
+                            <ul>
+                                <li>Intro to Android Studio</li>
+                                <li>Creating your first App</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <p class="week-schedule">WEEK 3-4</p>
+                        <img src="./assets/img/syllabus/2.png" />
+                        <div class="details">
+                            <ul>
+                                <li>Basic Components & Layouts</li>
+                                <li>Calculator App</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <p class="week-schedule">WEEK 5-6</p>
+                        <img src="./assets/img/syllabus/3.png" />
+                        <div class="details">
+                            <ul>
+                                <li>Android Activity & Lifecycle</li>
+                                <li>A Multi-Screen Project</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <p class="week-schedule">WEEK 7-8</p>
+                        <img src="./assets/img/syllabus/4.png" />
+                        <div class="details">
+                            <ul>
+                                <li>Retrieve & Parse JSON Data from Web URL</li>
+                                <li>Simple API Call Project</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <p class="week-schedule">WEEK 9-10</p>
+                        <img src="./assets/img/syllabus/5.png" />
+                        <div class="details">
+                            <ul>
+                                <li>Dialogs</li>
+                                <li>Login Screen Project</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <p class="week-schedule">WEEK 11-12</p>
+                        <img src="./assets/img/syllabus/6.png" />
+                        <div class="details">
+                            <ul>
+                                <li>App Data, Files & Recycler View</li>
+                                <li>ListView Project</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <p class="week-schedule">WEEK 13-14</p>
+                        <img src="./assets/img/syllabus/7.png" />
+                        <div class="details">
+                            <ul>
+                                <li>Intro to Flutter</li>
+                                <li>XCode</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <p class="week-schedule">WEEK 15</p>
+                        <img src="./assets/img/syllabus/8.png" />
+                        <div class="party">
+                            <p>A Party Maybe ???</p>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    $(".carousel").owlCarousel({
+                        margin: 20,
+                        loop: true,
+                        autoplay: true,
+                        autoplayTimeout: 3000,
+                        autoplayHoverPause: true,
+                        responsive: {
+                            0: {
+                                items: 1,
+                                nav: false,
+                            },
+                            600: {
+                                items: 2,
+                                nav: false,
+                            },
+                            1000: {
+                                items: 3,
+                                nav: false,
+                            },
+                        },
+                    });
+                </script>
+            </div>
         </div>
         <!-- END Syllabus Section -->
 
