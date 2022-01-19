@@ -11,6 +11,10 @@
         />
         <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
         <link rel="stylesheet" href="./assets/css/main.css" />
+        <link rel="stylesheet" href="./assets/css/slider.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
         <link rel="icon" href="favicon.ico" />
     </head>
     <body>
@@ -130,10 +134,115 @@
         <!-- END App Showcase Section - DO NOT IMPLEMENT -->
 
         <!-- BEGIN Syllabus Section -->
-        <!-- INSERT YOUR CODE HERE FOR THE SYLLABUS SECTION -->
-        <!-- <div id="syllabus" class="section">
-            <h1>"SYLLABUS" PLACEHOLDER</h1>
-        </div> -->
+            <div id="syllabus" class="section">
+                <!-- INSERT YOUR CODE HERE FOR THE SYLLABUS SECTION -->
+                <div class="carousel owl-carousel">
+                    <div class="card">
+                        <div class="syllabus"><img src="./assets/img/syllabus/0.png" /></div>
+                    </div>
+                    <div class="card">
+                        <p class="week-schedule">WEEK 1-2</p>
+                        <img src="./assets/img/syllabus/1.png" />
+                        <div class="details">
+                            <ul>
+                                <li>Intro to Android Studio</li>
+                                <li>Creating your first App</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <p class="week-schedule">WEEK 3-4</p>
+                        <img src="./assets/img/syllabus/2.png" />
+                        <div class="details">
+                            <ul>
+                                <li>Basic Components & Layouts</li>
+                                <li>Calculator App</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <p class="week-schedule">WEEK 5-6</p>
+                        <img src="./assets/img/syllabus/3.png" />
+                        <div class="details">
+                            <ul>
+                                <li>Android Activity & Lifecycle</li>
+                                <li>A Multi-Screen Project</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <p class="week-schedule">WEEK 7-8</p>
+                        <img src="./assets/img/syllabus/4.png" />
+                        <div class="details">
+                            <ul>
+                                <li>Retrieve & Parse JSON Data from Web URL</li>
+                                <li>Simple API Call Project</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <p class="week-schedule">WEEK 9-10</p>
+                        <img src="./assets/img/syllabus/5.png" />
+                        <div class="details">
+                            <ul>
+                                <li>Dialogs</li>
+                                <li>Login Screen Project</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <p class="week-schedule">WEEK 11-12</p>
+                        <img src="./assets/img/syllabus/6.png" />
+                        <div class="details">
+                            <ul>
+                                <li>App Data, Files & Recycler View</li>
+                                <li>ListView Project</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <p class="week-schedule">WEEK 13-14</p>
+                        <img src="./assets/img/syllabus/7.png" />
+                        <div class="details">
+                            <ul>
+                                <li>Intro to Flutter</li>
+                                <li>XCode</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <p class="week-schedule">WEEK 15</p>
+                        <img src="./assets/img/syllabus/8.png" />
+                        <div class="party">
+                            <p>A Party Maybe ???</p>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    $(".carousel").owlCarousel({
+                        margin: 20,
+                        loop: true,
+                        autoplay: true,
+                        autoplayTimeout: 3000,
+                        autoplayHoverPause: true,
+                        responsive: {
+                            0: {
+                                items: 1,
+                                nav: false,
+                            },
+                            600: {
+                                items: 2,
+                                nav: false,
+                            },
+                            1000: {
+                                items: 3,
+                                nav: false,
+                            },
+                        },
+                    });
+                </script>
+            </div>
+        </div>
         <!-- END Syllabus Section -->
 
         <!-- BEGIN Apply Section -->
