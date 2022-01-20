@@ -10,7 +10,7 @@ const displayNavLogo = function () {
     var screenBottom = $(window).scrollTop() + $(window).innerHeight();
     var headerTop = $("#home-header").offset().top;
     var headerBottom = $("#home-header").offset().top + $("#home-header").outerHeight();
-    
+
     var actualDisplayTop = screenTop + $("#navbar-container").outerHeight();
     var about = $("#about").offset().top;
     var syllabus = $("#syllabus").offset().top;
@@ -34,7 +34,7 @@ const displayNavLogo = function () {
         $("#syllabusLink").addClass("active");
     } else if (actualDisplayTop > about) {
         $("#aboutLink").addClass("active");
-    } 
+    }
 }
 $(document).ready(displayNavLogo);
 $(window).scroll(displayNavLogo);
