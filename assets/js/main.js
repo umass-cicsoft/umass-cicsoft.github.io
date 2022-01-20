@@ -6,18 +6,35 @@ $(".nav-link").on("click", function () {
 
 // script to handle scrolling changes to the navigation bar for the logo
 const displayNavLogo = function () {
-    var top_of_element = $("#home-header").offset().top;
-    var bottom_of_element = $("#home-header").offset().top + $("#home-header").outerHeight();
-    var bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
-    var top_of_screen = $(window).scrollTop();
+    var screenTop = $(window).scrollTop();
+    var screenBottom = $(window).scrollTop() + $(window).innerHeight();
+    var headerTop = $("#home-header").offset().top;
+    var headerBottom = $("#home-header").offset().top + $("#home-header").outerHeight();
+    
+    var actualDisplayTop = screenTop + $("#navbar-container").outerHeight();
+    var about = $("#about").offset().top;
+    var syllabus = $("#syllabus").offset().top;
+    var apply = $("#apply").offset().top;
+    var team = $("#team").offset().top;
 
-    if (bottom_of_screen > top_of_element && top_of_screen < bottom_of_element) {
+    if (screenBottom > headerTop && screenTop < headerBottom) {
         // when the header logo is visible, hide the navbar logo
         $("#navbar-brand-logo").hide();
     } else {
         // when the header logo is not visible, show the navbar logo
         $("#navbar-brand-logo").show();
     }
+
+    $(".nav-link.active").removeClass("active");
+    if (actualDisplayTop > team) {
+        $("#teamLink").addClass("active");
+    } else if (actualDisplayTop > apply) {
+        $("#applyLink").addClass("active");
+    } else if (actualDisplayTop > syllabus) {
+        $("#syllabusLink").addClass("active");
+    } else if (actualDisplayTop > about) {
+        $("#aboutLink").addClass("active");
+    } 
 }
 $(document).ready(displayNavLogo);
 $(window).scroll(displayNavLogo);
