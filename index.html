@@ -18,6 +18,10 @@
         <link rel="icon" href="favicon.ico" />
     </head>
     <body>
+        <!-- BEGIN Particles.js -->
+        <div id="particles-js"></div>
+        <!-- END Particles.js -->
+        
         <!-- BEGIN Navigation Bar -->
         <div id="navbar-container" class="container-fluid">
             <nav class="navbar navbar-expand-lg navbar-dark">
@@ -39,10 +43,10 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item"><a class="nav-link active" aria-current="page" href="#about">ABOUT</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#app-showcase">APP SHOWCASE</a></li>
+                            <!-- <li class="nav-item"><a class="nav-link" href="#app-showcase">APP SHOWCASE</a></li> -->
                             <li class="nav-item"><a class="nav-link" href="#syllabus">SYLLABUS</a></li>
                             <li class="nav-item"><a class="nav-link" href="#apply">APPLY</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#faqs">FAQS</a></li>
+                            <!-- <li class="nav-item"><a class="nav-link" href="#faqs">FAQS</a></li> -->
                             <li class="nav-item"><a class="nav-link" href="#team">TEAM</a></li>
                         </ul>
                     </div>
@@ -73,57 +77,54 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-10 mx-auto">
-                        <p class="lead" style="text-align: justify;">
+                        <p class="lead" style="text-align: justify">
                             CICSoft provides a collaborative environment for members to enhance their technical capabilities while developing applications. CICSoft creates an
                             atmosphere for students to learn application development from the ground up through weekly sessions. Our Lab division aims to develop and publish
                             next-generation apps for UMass and the greater community. Join CICSoft's Annual Appathon to turn your concept into a reality.
                         </p>
-                        <!-- <hr class="fade1" /> -->
                     </div>
                 </div>
                 <div class="row justify-content-evenly">
-                    <div class="card text-white bg-dark m-2 p-3 rounded-3" style="width: 32rem">
+                    <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 32rem">
                         <div class="card-body text-center">
                             <h3 class="card-title"><small>Weekly Sessions</small></h3>
-                            <p class="card-text lead" style="text-align: justify;">
+                            <p class="card-text lead" style="text-align: justify">
                                 We aim to teach students to build great apps regardless of their major and field. CICSoft aims to enhance students’ technical skills and bring their
                                 ideas to life by teaching native software like Android studio and XCode as well as cutting-edge technologies like Flutter. Besides a spoonful of
                                 compassion, CICSoft does not require any prior experience or skill.
                             </p>
-                            <button type="submit" class="btn btn-danger m-1">Become a Member</button>
+                            <a type="button" class="btn btn-dark m-1" href="#apply">Register Now</a>
                         </div>
                     </div>
-                    <div class="card text-white bg-dark m-2 p-3 rounded-3" style="width: 32rem">
+                    <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 32rem">
                         <div class="card-body text-center">
                             <h3 class="card-title"><small>Lab Division</small></h3>
-                            <p class="card-text lead" style="text-align: justify;">
+                            <p class="card-text lead" style="text-align: justify">
                                 Our mission is to create amazing apps for UMass and the surrounding community, in the spirit of Manning CICS' goal of "computing for the common
                                 good". Each year, lab developers will be hired to work on certain projects throughout the year. We expect lab developers to have some experience,
                                 which they would gain as a member!
                             </p>
-                            <button type="submit" class="btn btn-danger m-1">Apply</button>
+                            <button type="button" class="btn btn-dark m-1" data-bs-toggle="modal" data-bs-target="#labApply">Become a Developer</button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="labApply" tabindex="-1" aria-labelledby="labApplyLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content bg-dark text-white">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="labApplyLabel">Interested in joining our Lab Division?</h5>
+                                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Reach out to us by email at <a href="mailto:cicsoft@cs.umass.edu?subject=Interested in CICSoft Lab Division">cicsoft@cs.umass.edu</a> or
+                                            on our Instagram <a href="https://www.instagram.com/cicsoft/" target="_blank">@cicsoft</a> to indicate your interest in becoming a lab
+                                            developer!
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <!-- <div class="col-sm-4">
-                        <h4 class="page-section-heading text-center text-white"><small>Weekly Sessions</small></h4>
-                        <p class="lead">
-                            We aim to teach students to build great apps regardless of their major and field. CICSoft aims to enhance students’ technical skills and bring their
-                            ideas to life by teaching native software like Android studio and XCode as well as cutting-edge technologies like Flutter. Besides a spoonful of
-                            compassion, CICSoft does not require any prior experience or skill.
-                        </p>
-                    </div>
-                    <div class="col-sm-4">
-                        <h4 class="page-section-heading text-center text-white"><small>CICSoft Lab</small></h4>
-                        <p class="lead">
-                            Our mission is to create amazing apps for UMass and the surrounding community, in the spirit of Manning CICS' goal of "computing for the common good".
-                            Each year, lab developers will be hired to work on certain projects throughout the year. We expect lab developers to have some experience, which they
-                            would gain as a member!
-                        </p>
-                    </div> -->
                 </div>
             </div>
-            <!-- INSERT YOUR CODE HERE FOR THE ABOUT SECTION 
-            <h1>"ABOUT" PLACEHOLDER</h1> -->
         </div>
         <!-- END About Section -->
 
@@ -134,121 +135,116 @@
         <!-- END App Showcase Section - DO NOT IMPLEMENT -->
 
         <!-- BEGIN Syllabus Section -->
-            <div id="syllabus" class="section">
-                <!-- INSERT YOUR CODE HERE FOR THE SYLLABUS SECTION -->
-                <div class="carousel owl-carousel">
-                    <div class="card">
-                        <div class="syllabus"><img src="./assets/img/syllabus/0.png" /></div>
-                    </div>
-                    <div class="card">
-                        <p class="week-schedule">WEEK 1-2</p>
-                        <img src="./assets/img/syllabus/1.png" />
-                        <div class="details">
-                            <ul>
-                                <li>Intro to Android Studio</li>
-                                <li>Creating your first App</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <p class="week-schedule">WEEK 3-4</p>
-                        <img src="./assets/img/syllabus/2.png" />
-                        <div class="details">
-                            <ul>
-                                <li>Basic Components & Layouts</li>
-                                <li>Calculator App</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <p class="week-schedule">WEEK 5-6</p>
-                        <img src="./assets/img/syllabus/3.png" />
-                        <div class="details">
-                            <ul>
-                                <li>Android Activity & Lifecycle</li>
-                                <li>A Multi-Screen Project</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <p class="week-schedule">WEEK 7-8</p>
-                        <img src="./assets/img/syllabus/4.png" />
-                        <div class="details">
-                            <ul>
-                                <li>Retrieve & Parse JSON Data from Web URL</li>
-                                <li>Simple API Call Project</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <p class="week-schedule">WEEK 9-10</p>
-                        <img src="./assets/img/syllabus/5.png" />
-                        <div class="details">
-                            <ul>
-                                <li>Dialogs</li>
-                                <li>Login Screen Project</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <p class="week-schedule">WEEK 11-12</p>
-                        <img src="./assets/img/syllabus/6.png" />
-                        <div class="details">
-                            <ul>
-                                <li>App Data, Files & Recycler View</li>
-                                <li>ListView Project</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <p class="week-schedule">WEEK 13-14</p>
-                        <img src="./assets/img/syllabus/7.png" />
-                        <div class="details">
-                            <ul>
-                                <li>Intro to Flutter</li>
-                                <li>XCode</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <p class="week-schedule">WEEK 15</p>
-                        <img src="./assets/img/syllabus/8.png" />
-                        <div class="party">
-                            <p>A Party Maybe ???</p>
-                        </div>
+        <div id="syllabus" class="section">
+            <!-- INSERT YOUR CODE HERE FOR THE SYLLABUS SECTION -->
+            <div class="section-header row justify-content-center align-items-center text-center">Weekly Syllabus</div>
+            <div class="carousel owl-carousel">
+                <div class="card">
+                    <p class="week-schedule">WEEK 1-2</p>
+                    <img src="./assets/img/syllabus/1.png" />
+                    <div class="details">
+                        <ul>
+                            <li>Introduction to Android Studio</li>
+                            <li>Creating your First Application</li>
+                        </ul>
                     </div>
                 </div>
-                <script>
-                    $(".carousel").owlCarousel({
-                        margin: 20,
-                        loop: true,
-                        autoplay: true,
-                        autoplayTimeout: 3000,
-                        autoplayHoverPause: true,
-                        responsive: {
-                            0: {
-                                items: 1,
-                                nav: false,
-                            },
-                            600: {
-                                items: 2,
-                                nav: false,
-                            },
-                            1000: {
-                                items: 3,
-                                nav: false,
-                            },
-                        },
-                    });
-                </script>
+                <div class="card">
+                    <p class="week-schedule">WEEK 3-4</p>
+                    <img src="./assets/img/syllabus/2.png" />
+                    <div class="details">
+                        <ul>
+                            <li>Basic Components & Layouts</li>
+                            <li>Calculator App</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <p class="week-schedule">WEEK 5-6</p>
+                    <img src="./assets/img/syllabus/3.png" />
+                    <div class="details">
+                        <ul>
+                            <li>Android Activity & Lifecycle</li>
+                            <li>A Multi-Screen Project</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <p class="week-schedule">WEEK 7-8</p>
+                    <img src="./assets/img/syllabus/4.png" />
+                    <div class="details">
+                        <ul>
+                            <li>Retrieve & Parse JSON Data from Web URL</li>
+                            <li>Simple API Call Project</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <p class="week-schedule">WEEK 9-10</p>
+                    <img src="./assets/img/syllabus/5.png" />
+                    <div class="details">
+                        <ul>
+                            <li>Dialogs</li>
+                            <li>Login Screen Project</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <p class="week-schedule">WEEK 11-12</p>
+                    <img src="./assets/img/syllabus/6.png" />
+                    <div class="details">
+                        <ul>
+                            <li>App Data, Files & Recycler View</li>
+                            <li>ListView Project</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <p class="week-schedule">WEEK 13-14</p>
+                    <img src="./assets/img/syllabus/7.png" />
+                    <div class="details">
+                        <ul>
+                            <li>Introduction to Flutter</li>
+                            <li>Introduction to XCode</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <p class="week-schedule">WEEK 15</p>
+                    <img src="./assets/img/syllabus/8.png" />
+                    <div class="party">
+                        <p>A party maybe?</p>
+                    </div>
+                </div>
             </div>
+            <script>
+                $(".carousel").owlCarousel({
+                    margin: 10,
+                    loop: true,
+                    autoplay: true,
+                    autoplayTimeout: 3000,
+                    autoplayHoverPause: true,
+                    items: 3,
+                    responsive: {
+                        0: {
+                            items: 1,
+                        },
+                        600: {
+                            items: 2,
+                        },
+                        1000: {
+                            items: 3,
+                        },
+                    },
+                });
+            </script>
         </div>
         <!-- END Syllabus Section -->
 
         <!-- BEGIN Apply Section -->
         <div id="apply" class="section">
             <!-- INSERT YOUR CODE HERE FOR THE APPLY SECTION -->
-            <div class="section-header row justify-content-center align-items-center text-center">Apply to CICSoft</div>
+            <div class="section-header row justify-content-center align-items-center text-center">Apply</div>
             <div class="form-container">
                 <form>
                     <div class="row">
@@ -310,12 +306,18 @@
                     </div>
                     <div class="row">
                         <div class="col-md mb-3">
-                            <label for="applyGitHub" class="form-label">GitHub Link</label>
-                            <input type="url" class="form-control" id="applyGitHub" placeholder="github.com/jdoe" />
+                            <label for="applyGitHub" class="form-label">GitHub Profile</label>
+                            <div class="input-group">
+                                <span class="input-group-text" id="applyGitHubBase">https://github.com/</span>
+                                <input type="text" class="form-control" id="applyGitHub" aria-describedby="applyGitHub" placeholder="jdoe" />
+                            </div>
                         </div>
                         <div class="col-md mb-3">
-                            <label for="applyLinkedIn" class="form-label">LinkedIn Link</label>
-                            <input type="url" class="form-control" id="applyLinkedIn" placeholder="linkedin.com/in/jdoe" />
+                            <label for="applyLinkedIn" class="form-label">LinkedIn Profile</label>
+                            <div class="input-group">
+                                <span class="input-group-text" id="applyLinkedInBase">https://linkedin.com/in/</span>
+                                <input type="text" class="form-control" id="applyLinkedIn" aria-describedby="applyLinkedIn" placeholder="jdoe" />
+                            </div>
                         </div>
                     </div>
                     <div class="mb-3">
@@ -377,23 +379,23 @@
             <!-- INSERT YOUR CODE HERE FOR THE TEAM SECTION -->
             <div class="section-header row justify-content-center align-items-center text-center">Our Team</div>
             <div class="row justify-content-center align-items-center text-center w-100">
-                <div class="card text-white bg-dark m-2 p-3 rounded-3" style="width: 20rem">
-                    <img src="./assets/img/team/404_him.jpg" class="card-img-top rounded-circle" alt="..." />
+                <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 20rem">
+                    <img src="./assets/img/team/manmeet_singh_tuteja.jpg" class="card-img-top rounded-circle" alt="..." />
                     <div class="card-body text-center">
                         <h5 class="card-title">Manmeet Singh Tuteja</h5>
                         <h6 class="card-text">President</h6>
                         <!-- <p class="card-caption">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p> -->
                     </div>
                 </div>
-                <div class="card text-white bg-dark m-2 p-3 rounded-3" style="width: 20rem">
-                    <img src="./assets/img/team/404_him.jpg" class="card-img-top rounded-circle" alt="..." />
+                <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 20rem">
+                    <img src="./assets/img/team/anshul_vemulapalli.jpg" class="card-img-top rounded-circle" alt="..." />
                     <div class="card-body text-center">
                         <h5 class="card-title">Anshul Vemulapalli</h5>
                         <h6 class="card-text">Vice-President</h6>
                         <!-- <p class="card-caption">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p> -->
                     </div>
                 </div>
-                <div class="card text-white bg-dark m-2 p-3 rounded-3" style="width: 20rem">
+                <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 20rem">
                     <img src="./assets/img/team/aditya_vikram_singh.jpg" class="card-img-top rounded-circle" alt="..." />
                     <div class="card-body text-center">
                         <h5 class="card-title">Aditya Vikram Singh</h5>
@@ -401,8 +403,8 @@
                         <!-- <p class="card-caption">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p> -->
                     </div>
                 </div>
-                <div class="card text-white bg-dark m-2 p-3 rounded-3" style="width: 20rem">
-                    <img src="./assets/img/team/404_him.jpg" class="card-img-top rounded-circle" alt="..." />
+                <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 20rem">
+                    <img src="./assets/img/team/kirat_arora.jpg" class="card-img-top rounded-circle" alt="..." />
                     <div class="card-body text-center">
                         <h5 class="card-title">Kirat Arora</h5>
                         <h6 class="card-text">Director of Communications</h6>
@@ -411,7 +413,7 @@
                 </div>
             </div>
             <div class="row justify-content-center align-items-center text-center w-100">
-                <div class="card text-white bg-dark m-2 p-3 rounded-3" style="width: 20rem">
+                <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 20rem">
                     <img src="./assets/img/team/404_her.jpg" class="card-img-top rounded-circle" alt="..." />
                     <div class="card-body text-center">
                         <h5 class="card-title">Amandeep Kaur Singh</h5>
@@ -419,7 +421,7 @@
                         <!-- <p class="card-caption">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p> -->
                     </div>
                 </div>
-                <div class="card text-white bg-dark m-2 p-3 rounded-3" style="width: 20rem">
+                <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 20rem">
                     <img src="./assets/img/team/anushree_patil.jpg" class="card-img-top rounded-circle" alt="..." />
                     <div class="card-body text-center">
                         <h5 class="card-title">Anushree Patil</h5>
@@ -427,23 +429,23 @@
                         <!-- <p class="card-caption">CICSOFT is the means to enhance innovative mindset and networking skills which will get us better future opportunities.</p> -->
                     </div>
                 </div>
-                <div class="card text-white bg-dark m-2 p-3 rounded-3" style="width: 20rem">
-                    <img src="./assets/img/team/404_her.jpg" class="card-img-top rounded-circle" alt="..." />
+                <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 20rem">
+                    <img src="./assets/img/team/chandni_laheja.jpg" class="card-img-top rounded-circle" alt="..." />
                     <div class="card-body text-center">
                         <h5 class="card-title">Chandni Laheja</h5>
                         <h6 class="card-text">Founding Member</h6>
                         <!-- <p class="card-caption">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p> -->
                     </div>
                 </div>
-                <div class="card text-white bg-dark m-2 p-3 rounded-3" style="width: 20rem">
-                    <img src="./assets/img/team/404_him.jpg" class="card-img-top rounded-circle" alt="..." />
+                <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 20rem">
+                    <img src="./assets/img/team/james_leone.jpg" class="card-img-top rounded-circle" alt="..." />
                     <div class="card-body text-center">
                         <h5 class="card-title">James Leone</h5>
                         <h6 class="card-text">Founding Member</h6>
                         <!-- <p class="card-caption">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p> -->
                     </div>
                 </div>
-                <div class="card text-white bg-dark m-2 p-3 rounded-3" style="width: 20rem">
+                <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 20rem">
                     <img src="./assets/img/team/prit_shah.jpg" class="card-img-top rounded-circle" alt="..." />
                     <div class="card-body text-center">
                         <h5 class="card-title">Prit Shah</h5>
@@ -451,15 +453,15 @@
                         <!-- <p class="card-caption">CICSoft will help in learning all the current trends in software development.</p> -->
                     </div>
                 </div>
-                <div class="card text-white bg-dark m-2 p-3 rounded-3" style="width: 20rem">
-                    <img src="./assets/img/team/404_him.jpg" class="card-img-top rounded-circle" alt="..." />
+                <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 20rem">
+                    <img src="./assets/img/team/rohan_raghuram.jpg" class="card-img-top rounded-circle" alt="..." />
                     <div class="card-body text-center">
                         <h5 class="card-title">Rohan Raghuram</h5>
                         <h6 class="card-text">Founding Member</h6>
                         <!-- <p class="card-caption">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p> -->
                     </div>
                 </div>
-                <div class="card text-white bg-dark m-2 p-3 rounded-3" style="width: 20rem">
+                <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 20rem">
                     <img src="./assets/img/team/404_him.jpg" class="card-img-top rounded-circle" alt="..." />
                     <div class="card-body text-center">
                         <h5 class="card-title">Samarth Narang</h5>
@@ -467,7 +469,7 @@
                         <!-- <p class="card-caption">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p> -->
                     </div>
                 </div>
-                <div class="card text-white bg-dark m-2 p-3 rounded-3" style="width: 20rem">
+                <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 20rem">
                     <img src="./assets/img/team/siddharth_jain.jpg" class="card-img-top rounded-circle" alt="..." />
                     <div class="card-body text-center">
                         <h5 class="card-title">Siddharth Jain</h5>
@@ -475,8 +477,8 @@
                         <!-- <p class="card-caption">I just like to build stuff, I guess.</p> -->
                     </div>
                 </div>
-                <div class="card text-white bg-dark m-2 p-3 rounded-3" style="width: 20rem">
-                    <img src="./assets/img/team/404_him.jpg" class="card-img-top rounded-circle" alt="..." />
+                <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 20rem">
+                    <img src="./assets/img/team/vansh_shah.jpg" class="card-img-top rounded-circle" alt="..." />
                     <div class="card-body text-center">
                         <h5 class="card-title">Vansh Shah</h5>
                         <h6 class="card-text">Founding Member</h6>
@@ -496,6 +498,7 @@
 
         <script src="./assets/js/popper.min.js"></script>
         <script src="./assets/js/jquery.min.js"></script>
+        <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
         <script src="./assets/js/bootstrap.min.js"></script>
         <script src="./assets/js/main.js"></script>
     </body>
