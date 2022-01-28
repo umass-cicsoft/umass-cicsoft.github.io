@@ -93,7 +93,8 @@
                                 ideas to life by teaching native software like Android studio and XCode as well as cutting-edge technologies like Flutter. Besides a spoonful of
                                 compassion, CICSoft does not require any prior experience or skill.
                             </p>
-                            <a type="button" class="btn btn-dark m-1" href="#apply">Register Now</a>
+                            <!-- <a type="button" class="btn btn-dark m-1" href="#apply">Register Now</a> -->
+                            <button type="button" class="btn btn-dark m-1" data-bs-toggle="modal" data-bs-target="#submit">Registrations Soon</button>
                         </div>
                     </div>
                     <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 32rem">
@@ -246,7 +247,7 @@
             <!-- INSERT YOUR CODE HERE FOR THE APPLY SECTION -->
             <div class="section-header row justify-content-center align-items-center text-center">Apply</div>
             <div class="form-container">
-                <form>
+                <form id="applyForm">
                     <div class="row">
                         <div class="col-md mb-3">
                             <label for="applyFirstName" class="form-label">First Name <span style="color: red">*</span></label>
@@ -264,8 +265,8 @@
                         </div>
                         <div class="col-md mb-3">
                             <label for="applyGraduationYear" class="form-label">Graduation Year <span style="color: red">*</span></label>
-                            <select required class="form-select" aria-label="Graduation Year Selection">
-                                <option disabled selected>Select your graduation year</option>
+                            <select required class="form-select" id="applyGraduationYear" aria-label="Graduation Year Selection">
+                                <option disabled value="" selected>Select your graduation year</option>
                                 <option value="2022">2022</option>
                                 <option value="2023">2023</option>
                                 <option value="2024">2024</option>
@@ -278,27 +279,27 @@
                         <div class="row">
                             <div class="col-lg">
                                 <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" role="switch" value="computerScience" id="majorComputerScience" />
+                                    <input class="form-check-input" type="checkbox" role="switch" value="Computer Science" id="majorComputerScience" />
                                     <label class="form-check-label" for="majorComputerScience"> Computer Science </label>
                                 </div>
                                 <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" role="switch" value="computerEngineering" id="majorComputerEngineering" />
+                                    <input class="form-check-input" type="checkbox" role="switch" value="Computer Engineering" id="majorComputerEngineering" />
                                     <label class="form-check-label" for="majorComputerEngineering"> Computer Engineering </label>
                                 </div>
                             </div>
                             <div class="col-lg">
                                 <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" role="switch" value="mathematics" id="majorMathematics" />
+                                    <input class="form-check-input" type="checkbox" role="switch" value="Mathematics" id="majorMathematics" />
                                     <label class="form-check-label" for="majorMathematics"> Mathematics </label>
                                 </div>
                                 <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" role="switch" value="informatics" id="majorInformatics" />
+                                    <input class="form-check-input" type="checkbox" role="switch" value="Informatics" id="majorInformatics" />
                                     <label class="form-check-label" for="majorInformatics"> Informatics </label>
                                 </div>
                             </div>
                             <div class="col-lg">
                                 <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" role="switch" value="other" id="majorOther" />
+                                    <input class="form-check-input" type="checkbox" role="switch" value="Other" id="majorOther" />
                                     <label class="form-check-label" for="majorOther"> Other </label>
                                 </div>
                             </div>
@@ -309,14 +310,28 @@
                             <label for="applyGitHub" class="form-label">GitHub Profile</label>
                             <div class="input-group">
                                 <span class="input-group-text" id="applyGitHubBase">https://github.com/</span>
-                                <input type="text" class="form-control" id="applyGitHub" aria-describedby="applyGitHub" placeholder="jdoe" />
+                                <input
+                                    type="text"
+                                    pattern="^[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}$"
+                                    class="form-control"
+                                    id="applyGitHub"
+                                    aria-describedby="applyGitHub"
+                                    placeholder="jdoe"
+                                />
                             </div>
                         </div>
                         <div class="col-md mb-3">
                             <label for="applyLinkedIn" class="form-label">LinkedIn Profile</label>
                             <div class="input-group">
                                 <span class="input-group-text" id="applyLinkedInBase">https://linkedin.com/in/</span>
-                                <input type="text" class="form-control" id="applyLinkedIn" aria-describedby="applyLinkedIn" placeholder="jdoe" />
+                                <input
+                                    type="text"
+                                    pattern="[a-zA-Z0-9/~\-_,&=\?\.;]+[^\.,\s<]"
+                                    class="form-control"
+                                    id="applyLinkedIn"
+                                    aria-describedby="applyLinkedIn"
+                                    placeholder="jdoe"
+                                />
                             </div>
                         </div>
                     </div>
@@ -329,38 +344,55 @@
                         <div class="row">
                             <div class="col-lg">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="referral" value="instagram" id="referralInstagram" />
+                                    <input class="form-check-input" type="radio" name="applyReferral" value="Instagram" id="referralInstagram" />
                                     <label class="form-check-label" for="referralInstagram"> Instagram </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="referral" value="discord" id="referralDiscord" />
+                                    <input class="form-check-input" type="radio" name="applyReferral" value="Discord" id="referralDiscord" />
                                     <label class="form-check-label" for="referralDiscord"> Discord </label>
                                 </div>
                             </div>
                             <div class="col-lg">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="referral" value="cicsoftWebsite" id="referralCicsoftWebsite" />
+                                    <input class="form-check-input" type="radio" name="applyReferral" value="CICSoft Website" id="referralCicsoftWebsite" />
                                     <label class="form-check-label" for="referralCicsoftWebsite"> CICSoft Website </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="referral" value="cicsoftMember" id="referralCicsoftMember" />
+                                    <input class="form-check-input" type="radio" name="applyReferral" value="CICSoft Member" id="referralCicsoftMember" />
                                     <label class="form-check-label" for="referralCicsoftMember"> CICSoft Member </label>
                                 </div>
                             </div>
                             <div class="col-lg">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="referral" value="cicsNewsletter" id="referralCicsNewsletter" />
+                                    <input class="form-check-input" type="radio" name="applyReferral" value="CICS Newsletter" id="referralCicsNewsletter" />
                                     <label class="form-check-label" for="referralCicsNewsletter"> CICS Newsletter </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="referral" value="friends" id="referralFriends" />
+                                    <input class="form-check-input" type="radio" name="applyReferral" value="Friend" id="referralFriends" />
                                     <label class="form-check-label" for="referralFriends"> Friend(s) </label>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="container text-center">
-                        <button type="submit" class="btn btn-danger m-1">Submit</button>
+                        <!-- <button type="submit" class="btn btn-danger m-1">Submit</button> -->
+                        <button type="button" class="btn btn-danger m-1" data-bs-toggle="modal" data-bs-target="#submit">Submit</button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="submit" tabindex="-1" aria-labelledby="submitLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content bg-dark text-white">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="submitLabel">Want to register for our Weekly Sessions?</h5>
+                                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Don't worry, registrations for weekly sessions will be starting shortly! In the meanwhile, if you have any questions, contact us at
+                                        <a href="mailto:cicsoft@cs.umass.edu?subject=Query about Weekly Sessions">cicsoft@cs.umass.edu</a> or on our Instagram
+                                        <a href="https://www.instagram.com/cicsoft/" target="_blank">@cicsoft</a>.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <button type="reset" class="btn btn-danger m-1">Reset</button>
                     </div>
                 </form>
