@@ -4,6 +4,8 @@ $(".nav-link").on("click", function () {
     $(this).addClass("active");
 });
 
+document.cookie = "name=applyForm; SameSite=None; Secure";
+
 // script to handle scrolling changes to the navigation bar for the logo
 const displayNavLogo = function () {
     var screenTop = $(window).scrollTop();
@@ -39,6 +41,58 @@ const displayNavLogo = function () {
 $(document).ready(displayNavLogo);
 $(window).scroll(displayNavLogo);
 
+// send form data
+$("#applyForm").submit((event) => {
+    event.preventDefault();
+    let applyFormData = {
+        first_name: "", // REQUIRED
+        last_name: "", // REQUIRED
+        umass_email: "", // REQUIRED
+        github_link: "",
+        linked_link: "",
+        major: "", // REQUIRED, COMMA-SEPARATED
+        grad_year: 0, // REQUIRED
+        ans: "", // REQUIRED, answer to "Why are you interested in joining CICSoft?" should be passed
+        ans2: "", // REQUIRED, answer to "How did you hear about us?" should be passed
+        extra_field1: "", // FOR FUTURE (CURRENTLY UNUSED)
+        extra_field2: "" // FOR FUTURE (CURRENTLY UNUSED)
+    }
+    applyFormData["first_name"] = $("#applyFirstName").val();
+    applyFormData["last_name"] = $("#applyLastName").val();
+    applyFormData["umass_email"] = $("#applyEmail").val();
+    applyFormData["grad_year"] = parseInt($("#applyGraduationYear").val());
+    [
+        "#majorComputerScience",
+        "#majorComputerEngineering",
+        "#majorMathematics",
+        "#majorInformatics",
+        "#majorOther"
+    ].forEach(major => {
+        if ($(major).is(':checked')) {
+            if (applyFormData["major"].length === 0) {
+                applyFormData["major"] = $(major).val();
+            } else {
+                applyFormData["major"] = applyFormData["major"].concat(", ", $(major).val());
+            }
+        }
+    })
+    applyFormData["github_link"] = `https://github.com/${$("#applyGitHub").val()}`;
+    applyFormData["linked_link"] = `https://linkedin.com/in/${$("#applyLinkedIn").val()}`;
+    applyFormData["ans"] = $("#applyQuestion").val();
+    applyFormData["ans2"] = $("[name='applyReferral']:checked").val();
+
+    let requestHeaders = new Headers();
+    requestHeaders.append("Content-Type", "application/json");
+
+    fetch("https://cicsoft-web-api.herokuapp.com/userregistration", {
+        method: "POST",
+        body: JSON.stringify(applyFormData),
+        headers: requestHeaders,
+    })
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+});
 
 particlesJS(
     {
