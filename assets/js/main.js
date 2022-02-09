@@ -83,14 +83,28 @@ $("#applyForm").submit((event) => {
 
     let requestHeaders = new Headers();
     requestHeaders.append("Content-Type", "application/json");
+    $("#registerToast").toast({ autohide: true, delay: 3000 });
 
-    fetch("https://cicsoft-web-api.herokuapp.com/userregistration", {
+    fetch("https://cicsoft-web-api.herokuapp.com/user-registration", {
         method: "POST",
         body: JSON.stringify(applyFormData),
         headers: requestHeaders,
     })
-        .then(response => response.text())
-        .then(result => console.log(result))
+        .then(response => response.json())
+        .then(result => {
+            $("#registerToast").removeClass("bg-warning bg-success bg-danger");
+            if (result["message"] === "Member registered successfully") {
+                $("#registerToast").addClass("bg-success");
+                $("#registerToastText").text("You have successfully registered!");
+            } else if (result["message"] === "Member already registered") {
+                $("#registerToast").addClass("bg-warning");
+                $("#registerToastText").text("You are already registered with us!");
+            } else {
+                $("#registerToast").addClass("bg-danger");
+                $("#registerToastText").text("Something went wrong! Try again later.");
+            }
+            $("#registerToast").toast("show");
+        })
         .catch(error => console.log('error', error));
 });
 

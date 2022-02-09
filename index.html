@@ -22,6 +22,17 @@
         <div id="particles-js"></div>
         <!-- END Particles.js -->
 
+        <!-- BEGIN Toasts -->
+        <div class="position-fixed start-50 translate-middle-x p-5" style="z-index: 3">
+            <div id="registerToast" class="toast align-items-center text-white m-1" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                    <div id="registerToastText" class="toast-body"></div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+        <!-- END Toasts -->
+
         <!-- BEGIN Navigation Bar -->
         <div id="navbar-container" class="container-fluid">
             <nav class="navbar navbar-expand-lg navbar-dark">
@@ -375,24 +386,7 @@
                         </div>
                     </div>
                     <div class="container text-center">
-                        <!-- <button type="submit" class="btn btn-danger m-1">Submit</button> -->
-                        <button type="button" class="btn btn-danger m-1" data-bs-toggle="modal" data-bs-target="#submit">Submit</button>
-                        <!-- Modal -->
-                        <div class="modal fade" id="submit" tabindex="-1" aria-labelledby="submitLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content bg-dark text-white">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="submitLabel">Want to register for our Weekly Sessions?</h5>
-                                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        Don't worry, registrations for weekly sessions will be starting shortly! In the meanwhile, if you have any questions, contact us at
-                                        <a href="mailto:cicsoft@cs.umass.edu?subject=Query about Weekly Sessions">cicsoft@cs.umass.edu</a> or on our Instagram
-                                        <a href="https://www.instagram.com/cicsoft/" target="_blank">@cicsoft</a>.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <button type="submit" class="btn btn-danger m-1">Submit</button>
                         <button type="reset" class="btn btn-danger m-1">Reset</button>
                     </div>
                 </form>
