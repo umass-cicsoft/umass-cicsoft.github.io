@@ -96,9 +96,11 @@ $("#applyForm").submit((event) => {
             if (result["message"] === "Member registered successfully") {
                 $("#registerToast").addClass("bg-success");
                 $("#registerToastText").text("You have successfully registered!");
+                $("#applyForm").trigger("reset");
             } else if (result["message"] === "Member already registered") {
                 $("#registerToast").addClass("bg-warning");
                 $("#registerToastText").text("You are already registered with us!");
+                $("#applyForm").trigger("reset");
             } else {
                 $("#registerToast").addClass("bg-danger");
                 $("#registerToastText").text("Something went wrong! Try again later.");
