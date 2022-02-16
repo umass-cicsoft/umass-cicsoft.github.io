@@ -49,18 +49,16 @@ $("#applyForm").submit((event) => {
         last_name: "", // REQUIRED
         umass_email: "", // REQUIRED
         github_link: "",
-        linked_link: "",
+        linkedin_link: "",
         major: "", // REQUIRED, COMMA-SEPARATED
-        grad_year: 0, // REQUIRED
-        ans: "", // REQUIRED, answer to "Why are you interested in joining CICSoft?" should be passed
-        ans2: "", // REQUIRED, answer to "How did you hear about us?" should be passed
-        extra_field1: "", // FOR FUTURE (CURRENTLY UNUSED)
-        extra_field2: "" // FOR FUTURE (CURRENTLY UNUSED)
+        graduation_year: 0, // REQUIRED
+        interest_response: "", // REQUIRED, answer to "Why are you interested in joining CICSoft?" should be passed
+        referral_response: "", // REQUIRED, answer to "How did you hear about us?" should be passed
     }
     applyFormData["first_name"] = $("#applyFirstName").val();
     applyFormData["last_name"] = $("#applyLastName").val();
     applyFormData["umass_email"] = $("#applyEmail").val();
-    applyFormData["grad_year"] = parseInt($("#applyGraduationYear").val());
+    applyFormData["graduation_year"] = parseInt($("#applyGraduationYear").val());
     [
         "#majorComputerScience",
         "#majorComputerEngineering",
@@ -77,9 +75,9 @@ $("#applyForm").submit((event) => {
         }
     })
     applyFormData["github_link"] = `https://github.com/${$("#applyGitHub").val()}`;
-    applyFormData["linked_link"] = `https://linkedin.com/in/${$("#applyLinkedIn").val()}`;
-    applyFormData["ans"] = $("#applyQuestion").val();
-    applyFormData["ans2"] = $("[name='applyReferral']:checked").val();
+    applyFormData["linkedin_link"] = `https://linkedin.com/in/${$("#applyLinkedIn").val()}`;
+    applyFormData["interest_response"] = $("#applyQuestion").val();
+    applyFormData["referral_response"] = $("[name='applyReferral']:checked").val();
 
     let requestHeaders = new Headers();
     requestHeaders.append("Content-Type", "application/json");
