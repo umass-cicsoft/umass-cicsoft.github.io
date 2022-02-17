@@ -83,7 +83,7 @@ $("#applyForm").submit((event) => {
     requestHeaders.append("Content-Type", "application/json");
     $("#registerToast").toast({ autohide: true, delay: 3000 });
 
-    fetch("https://cicsoft-web-api.herokuapp.com/user-registration", {
+    fetch("https://cicsoft-web-api.herokuapp.com/user/register", {
         method: "POST",
         body: JSON.stringify(applyFormData),
         headers: requestHeaders,
