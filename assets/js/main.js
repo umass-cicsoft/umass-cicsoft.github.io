@@ -15,6 +15,7 @@ const displayNavLogo = function () {
 
     var actualDisplayTop = screenTop + $("#navbar-container").outerHeight();
     var about = $("#about").offset().top;
+    var technologyPoll = $("#technology-poll").offset().top;
     var syllabus = $("#syllabus").offset().top;
     var apply = $("#apply").offset().top;
     var team = $("#team").offset().top;
@@ -34,6 +35,8 @@ const displayNavLogo = function () {
         $("#applyLink").addClass("active");
     } else if (actualDisplayTop > syllabus) {
         $("#syllabusLink").addClass("active");
+    } else if (actualDisplayTop > technologyPoll) {
+        $("#technologyPollLink").addClass("active");
     } else if (actualDisplayTop > about) {
         $("#aboutLink").addClass("active");
     }
