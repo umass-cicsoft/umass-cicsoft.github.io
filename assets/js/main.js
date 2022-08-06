@@ -15,6 +15,7 @@ const displayNavLogo = function () {
 
     var actualDisplayTop = screenTop + $("#navbar-container").outerHeight();
     var about = $("#about").offset().top;
+    var technologyPoll = $("#technology-poll").offset().top;
     var syllabus = $("#syllabus").offset().top;
     var apply = $("#apply").offset().top;
     var team = $("#team").offset().top;
@@ -34,6 +35,8 @@ const displayNavLogo = function () {
         $("#applyLink").addClass("active");
     } else if (actualDisplayTop > syllabus) {
         $("#syllabusLink").addClass("active");
+    } else if (actualDisplayTop > technologyPoll) {
+        $("#technologyPollLink").addClass("active");
     } else if (actualDisplayTop > about) {
         $("#aboutLink").addClass("active");
     }
@@ -106,6 +109,37 @@ $("#applyForm").submit((event) => {
             $("#registerToast").toast("show");
         })
         .catch(error => console.log('error', error));
+});
+
+$('.submit-poll').click((event) => {
+    event.preventDefault();
+    let requestHeaders = new Headers();
+    requestHeaders.append("Content-Type", "application/json");
+    let requestBody = {
+        "poll_value": event.target.value
+    }
+    
+    $('.modal').modal('hide');
+    $("#pollToast").toast({ autohide: true, delay: 3000 });
+
+    fetch("https://cicsoft-web-api.herokuapp.com/technology_poll", {
+        method: "POST",
+        body: JSON.stringify(requestBody),
+        headers: requestHeaders,
+    }).then(response => response.json())
+    .then(result => {
+        $("#pollToast").removeClass("bg-warning bg-success bg-danger");
+        if (result["message"] === "Technology poll submitted successfully") {
+            $("#pollToast").addClass("bg-success");
+            $("#pollToastText").text(`You have successfully voted for ${event.target.value}!`);
+            $("#applyForm").trigger("reset");
+        } else {
+            $("#pollToast").addClass("bg-danger");
+            $("#pollToastText").text("Something went wrong! Try again later.");
+        }
+        $("#pollToast").toast("show");
+    })
+    .catch(error => console.log('error', error));
 });
 
 particlesJS(
