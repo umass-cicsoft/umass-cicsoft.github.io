@@ -36,6 +36,12 @@
                     <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
                 </div>
             </div>
+            <div id="suggestionToast" class="toast align-items-center text-white m-1" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                    <div id="suggestionToastText" class="toast-body"></div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
         </div>
         <!-- END Toasts -->
 
@@ -64,6 +70,7 @@
                             <!-- <li class="nav-item"><a id="appShowcaseLink" class="nav-link" href="#app-showcase">APP SHOWCASE</a></li> -->
                             <li class="nav-item"><a id="syllabusLink" class="nav-link" href="#syllabus">SYLLABUS</a></li>
                             <li class="nav-item"><a id="applyLink" class="nav-link" href="#apply">APPLY</a></li>
+                            <li class="nav-item"><a id="labSuggestionLink" class="nav-link" href="#lab_suggestion">LAB SUGGESTION</a></li>
                             <!-- <li class="nav-item"><a id="faqsLink" class="nav-link" href="#faqs">FAQS</a></li> -->
                             <li class="nav-item"><a id="teamLink" class="nav-link" href="#team">TEAM</a></li>
                         </ul>
@@ -510,6 +517,34 @@
             </div>
         </div>
         <!-- END Apply Section -->
+        <!-- BEGIN LAB SUGGESTION SECTION -->
+        <div id="lab_suggestion" class="section">
+            <div class="section-header row justify-content-center align-items-center text-center">Lab Suggestions</div>
+            <div class="form-container ">
+                <form id="lab_suggestion_form">
+                    <div class="row">
+                        <div class="col-md mb-3">
+                            <label for="lab_suggestion_FirstName" class="form-label">First Name <span style="color: red">*</span></label>
+                            <input required type="text" class="form-control" id="lab_suggestion_FirstName" placeholder="J." />
+                        </div>
+                        <div class="col-md mb-3">
+                            <label for="lab_suggestion_LastName" class="form-label">Last Name <span style="color: red">*</span></label>
+                            <input required type="text" class="form-control" id="lab_suggestion_LastName" placeholder="Doe" />
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="lab_suggestion_Question" class="form-label">Give us your idea for an app <span style="color: red">*</span></label>
+                        <textarea required class="form-control" id="lab_suggestion_Question" placeholder="How about an app that ..."></textarea>
+                    </div>
+                    <div class="container text-center">
+                        <button type="submit" class="btn btn-danger m-1">Submit</button>
+                        <button type="reset" class="btn btn-danger m-1">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+       
+        <!-- END LAB SUGGESTION SECTION -->
 
         <!-- BEGIN FAQs Section - DO NOT IMPLEMENT -->
         <!-- <div id="faqs" class="section">

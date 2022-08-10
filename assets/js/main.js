@@ -111,6 +111,37 @@ $("#applyForm").submit((event) => {
         .catch(error => console.log('error', error));
 });
 
+$('#lab_suggestion_form').submit((event) =>{
+    event.preventDefault();
+    let suggestionData = {
+        first_name:$("#lab_suggestion_FirstName").val(),
+        last_name:$("#lab_suggestion_LastName").val(),
+        idea_text:$("#lab_suggestion_Question").val()
+    }
+    console.log(suggestionData);
+    let requestHeaders = new Headers();
+    requestHeaders.append("Content-Type", "application/json");
+    fetch("https://cicsoft-web-api.herokuapp.com/lab_ideas",{
+        method:"POST",
+        body: JSON.stringify(suggestionData),
+        headers: requestHeaders
+    }).then(response => response.json())
+    .then(result => {
+        $("#suggestionToast").removeClass("bg-warning bg-success bg-danger");
+        if (result["message"] === "Lab idea submitted successfully") {
+            $("#suggestionToast").addClass("bg-success");
+            $("#suggestionToastText").text(`Thank you for your suggestion!`);
+            $("#lab_suggestion_form").trigger("reset");
+        } else {
+            $("#suggestionToast").addClass("bg-danger");
+            $("#suggestionToastText").text("Something went wrong! Try again later.");
+        }
+        $("#suggestionToast").toast("show");
+    })
+    .catch(error => console.log('error', error));
+
+});
+
 $('.submit-poll').click((event) => {
     event.preventDefault();
     let requestHeaders = new Headers();
