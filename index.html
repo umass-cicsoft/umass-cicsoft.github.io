@@ -16,6 +16,9 @@
         <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
         <link rel="icon" href="favicon.ico" />
+        <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-core.min.js"></script>
+        <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-pie.min.js"></script>
+    
     </head>
     <body>
         <!-- BEGIN Particles.js -->
@@ -157,19 +160,85 @@
         <div id="technology-poll" class="section" style="font-family: Lexend">
             <div class="section-header row justify-content-center align-items-center text-center">Technology Poll Results for Fall 2022</div>
             
-            <div id = "techPollResults"  >
+            <!-- <div id = "techPollResults"  >
                 <picture>
                     <source srcset="./assets/img/TechPoll.png" type="image/webp" />
-                    <img src="./assets/img/team/jpg/manmeet_singh_tuteja.jpg"/>
+                    <img src="./assets/img/TechPoll.png"/>
                 </picture>
+            </div> -->
+
+            
+            <div class = "techPollPie">
+                <canvas id="c"></canvas>
+                <script>
+                    let data = [
+                        {name:'React', troops:60},
+                        {name:'Flutter', troops:18},
+                        {name:'Android', troops:11}
+                    ];
+                    const randomHexColorCode = () => {
+                        return "#" + Math.random().toString(16).slice(2, 8)
+                    };
+                    
+                    document.addEventListener('DOMContentLoaded', ()=>{
+                        let canvas = document.getElementById('c');
+                        let ctx = canvas.getContext('2d');
+                        canvas.width = 800;
+                        canvas.height = 600;
+                        let total = data.reduce( (ttl, house) => {
+                            return ttl + house.troops
+                        }, 0);
+                        let startAngle = 0; 
+                        let radius = 100;
+                        let cx = canvas.width/2;
+                        let cy = canvas.height/2;
+
+
+                        data.forEach( house => {
+                            if(house.name == 'React'){
+                                ctx.fillStyle = "#DE0F3F";
+                            } else if (house.name == "Flutter"){
+                                ctx.fillStyle = "#F25881";
+                            } else{
+                                ctx.fillStyle = "#F98DBA";  
+                            }
+                            ctx.lineWidth = 1;
+                            ctx.strokeStyle = '#333';
+                            ctx.beginPath();
+                            let endAngle = ((house.troops / total) * Math.PI * 2) + startAngle;
+                            ctx.moveTo(cx, cy);
+                            ctx.arc(cx, cy, radius, startAngle, endAngle, false);
+                            ctx.lineTo(cx, cy);
+                            ctx.fill();
+                            ctx.stroke();
+                            ctx.closePath();
+                            ctx.beginPath();
+                            ctx.font = '25px Helvetica, Calibri';
+                            ctx.textAlign = 'center';
+                            ctx.fillStyle = 'white';
+                            let theta = (startAngle + endAngle) / 2;
+                            let deltaY = Math.sin(theta) * 1.5 * radius;
+                            let deltaX = Math.cos(theta) * 1.5 * radius;
+                            ctx.fillText(house.name, deltaX+cx, deltaY+cy);
+                            ctx.closePath();
+                            startAngle = endAngle;
+                        })
+                    });
+                </script>
             </div>
+
             <div class="card-body text-center">
                 <span>
-                  <h4>  Our poll has concluded, and as the results suggest, we will be covering <strong>REACT</strong> next semester. </h4>
-                  <h6>   Stay tuned! The syllabus will be updated soon. </h6>
+                    <h1>STATISTICS:</h1> <BR>
+                    <h3>Votes After Validation - 89</h3>
+                    <h3>React - 60</h3>
+                    <h3>Flutter - 18</h3>
+                    <h3>Android - 11</h3> 
+                    <BR>
+                    <h4>  Our poll has concluded, and as the results suggest, we will be covering <strong>REACT</strong> next semester. </h4>
+                    <h6>   Stay tuned! The syllabus will be updated soon. </h6>
                 </span> 
             </div>
-        </div>
             
             
             <!-- <div class="container-fluid">
