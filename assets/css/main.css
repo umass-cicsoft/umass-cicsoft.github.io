@@ -259,3 +259,29 @@ body {
     width: 100%;
     height: auto;
 }
+
+#techPollResults img {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: block;
+    border-radius: 1.5rem;
+    width: 95%;
+    height:95%;
+    object-fit: contain;
+}
+
+.techPollPie canvas{
+    width: 100%;
+    height:100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -130px;
+    margin-bottom: -130px;
+}
+
+.techPollPie{
+    display: flex;
+    
+}
