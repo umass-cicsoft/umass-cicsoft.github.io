@@ -86,6 +86,38 @@ body {
     font-family: "Lexend";
 }
 
+#loading-spinner {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #211d1e88;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+#loading-spinner > div {
+    width: 5rem;
+    height: 5rem;
+    font-size: 3rem;
+}
+
+.show{
+    visibility: visible !important;
+}
+
+#loading-spinner {
+	opacity: 0;
+}
+
+#loading-spinner.show {
+	opacity: 1
+}
+
 #home {
     padding-top: 3.5em;
     min-height: 100vh;

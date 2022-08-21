@@ -101,6 +101,7 @@ $("#applyForm").submit((event) => {
     requestHeaders.append("Content-Type", "application/json");
     $("#registerToast").toast({ autohide: true, delay: 3000 });
 
+    $("#loading-spinner").addClass('show');
     fetch("https://cicsoft-web-api.herokuapp.com/user/register", {
         method: "POST",
         body: JSON.stringify(applyFormData),
@@ -123,7 +124,10 @@ $("#applyForm").submit((event) => {
             }
             $("#registerToast").toast("show");
         })
-        .catch(error => console.log('error', error));
+        .catch(error => console.log('error', error))
+        .finally(() => {
+            $("#loading-spinner").removeClass('show')
+        });
 });
 
 $('#labSuggestionForm').submit((event) => {
@@ -137,6 +141,7 @@ $('#labSuggestionForm').submit((event) => {
     console.log(suggestionData);
     let requestHeaders = new Headers();
     requestHeaders.append("Content-Type", "application/json");
+    $("#loading-spinner").addClass('show');
     fetch("https://cicsoft-web-api.herokuapp.com/lab_ideas", {
         method: "POST",
         body: JSON.stringify(suggestionData),
@@ -154,7 +159,10 @@ $('#labSuggestionForm').submit((event) => {
             }
             $("#suggestionToast").toast("show");
         })
-        .catch(error => console.log('error', error));
+        .catch(error => console.log('error', error))
+        .finally(() => {
+            $("#loading-spinner").removeClass('show')
+        });
 });
 
 // send Core Team application form data
@@ -198,6 +206,7 @@ $("#joinForm").submit((event) => {
     requestHeaders.append("Content-Type", "application/json");
     $("#registerToast").toast({ autohide: true, delay: 3000 });
 
+    $("#loading-spinner").addClass('show');
     fetch("https://cicsoft-web-api.herokuapp.com/core/apply", {
         method: "POST",
         body: JSON.stringify(joinFormData),
@@ -220,7 +229,10 @@ $("#joinForm").submit((event) => {
             }
             $("#registerToast").toast("show");
         })
-        .catch(error => console.log('error', error));
+        .catch(error => console.log('error', error))
+        .finally(() => {
+            $("#loading-spinner").removeClass('show')
+        });
 });
 
 $('.submit-poll').click((event) => {
@@ -234,6 +246,7 @@ $('.submit-poll').click((event) => {
     $('.modal').modal('hide');
     $("#pollToast").toast({ autohide: true, delay: 3000 });
 
+    $("#loading-spinner").addClass('show');
     fetch("https://cicsoft-web-api.herokuapp.com/technology_poll", {
         method: "POST",
         body: JSON.stringify(requestBody),
@@ -251,7 +264,10 @@ $('.submit-poll').click((event) => {
             }
             $("#pollToast").toast("show");
         })
-        .catch(error => console.log('error', error));
+        .catch(error => console.log('error', error))
+        .finally(() => {
+            $("#loading-spinner").removeClass('show')
+        });
 });
 
 particlesJS(
