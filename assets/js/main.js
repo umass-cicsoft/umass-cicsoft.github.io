@@ -13,13 +13,6 @@ const displayNavLogo = function () {
     var headerTop = $("#home-header").offset().top;
     var headerBottom = $("#home-header").offset().top + $("#home-header").outerHeight();
 
-    var actualDisplayTop = screenTop + $("#navbar-container").outerHeight();
-    var about = $("#about").offset().top;
-    var technologyPoll = $("#technology-poll").offset().top;
-    var syllabus = $("#syllabus").offset().top;
-    var apply = $("#apply").offset().top;
-    var team = $("#team").offset().top;
-
     if (screenBottom > headerTop && screenTop < headerBottom) {
         // when the header logo is visible, hide the navbar logo
         $("#navbar-brand-logo").hide();
@@ -28,23 +21,45 @@ const displayNavLogo = function () {
         $("#navbar-brand-logo").show();
     }
 
-    $(".nav-link.active").removeClass("active");
-    if (actualDisplayTop > team) {
-        $("#teamLink").addClass("active");
-    } else if (actualDisplayTop > apply) {
-        $("#applyLink").addClass("active");
-    } else if (actualDisplayTop > syllabus) {
-        $("#syllabusLink").addClass("active");
-    } else if (actualDisplayTop > technologyPoll) {
-        $("#technologyPollLink").addClass("active");
-    } else if (actualDisplayTop > about) {
-        $("#aboutLink").addClass("active");
+    var locationSplits = window.location.href.split('/');
+    var locationId = locationSplits[locationSplits.length - 1];
+
+    var actualDisplayTop = screenTop + $("#navbar-container").outerHeight();
+    if (locationId.startsWith('core.html')) {
+        var joinUs = $("#join-us").offset().top;
+        $(".nav-link.active").removeClass("active");
+        if (actualDisplayTop > joinUs) {
+            $("#joinLink").addClass("active");
+        }
+    } else {
+        var about = $("#about").offset().top;
+        var technologyPoll = $("#technology-poll").offset().top;
+        var syllabus = $("#syllabus").offset().top;
+        var team = $("#team").offset().top;
+        var apply = $("#apply").offset().top;
+        var labSuggestion = $("#lab-suggestion").offset().top;
+
+        $(".nav-link.active").removeClass("active");
+        if (actualDisplayTop > team) {
+            $("#teamLink").addClass("active");
+        } else if (actualDisplayTop > labSuggestion) {
+            $("#labSuggestionLink").addClass("active");
+        } else if (actualDisplayTop > apply) {
+            $("#applyLink").addClass("active");
+        } else if (actualDisplayTop > syllabus) {
+            $("#syllabusLink").addClass("active");
+        } else if (actualDisplayTop > technologyPoll) {
+            $("#technologyPollLink").addClass("active");
+        } else if (actualDisplayTop > about) {
+            $("#aboutLink").addClass("active");
+        }
     }
+
 }
 $(document).ready(displayNavLogo);
 $(window).scroll(displayNavLogo);
 
-// send form data
+// send apply form data
 $("#applyForm").submit((event) => {
     event.preventDefault();
     let applyFormData = {
@@ -86,6 +101,7 @@ $("#applyForm").submit((event) => {
     requestHeaders.append("Content-Type", "application/json");
     $("#registerToast").toast({ autohide: true, delay: 3000 });
 
+    $("#loading-spinner").addClass('show');
     fetch("https://cicsoft-web-api.herokuapp.com/user/register", {
         method: "POST",
         body: JSON.stringify(applyFormData),
@@ -108,38 +124,115 @@ $("#applyForm").submit((event) => {
             }
             $("#registerToast").toast("show");
         })
-        .catch(error => console.log('error', error));
+        .catch(error => console.log('error', error))
+        .finally(() => {
+            $("#loading-spinner").removeClass('show')
+        });
 });
 
-$('#lab_suggestion_form').submit((event) =>{
+$('#labSuggestionForm').submit((event) => {
     event.preventDefault();
     let suggestionData = {
-        first_name:$("#lab_suggestion_FirstName").val(),
-        last_name:$("#lab_suggestion_LastName").val(),
-        idea_text:$("#lab_suggestion_Question").val()
+        first_name: $("#labSuggestionFirstName").val(), // REQUIRED
+        last_name: $("#labSuggestionLastName").val(), // REQUIRED
+        email: $("#labSuggestionEmail").val(), // REQUIRED
+        idea_text: $("#labSuggestionQuestion").val() // REQUIRED
     }
     console.log(suggestionData);
     let requestHeaders = new Headers();
     requestHeaders.append("Content-Type", "application/json");
-    fetch("https://cicsoft-web-api.herokuapp.com/lab_ideas",{
-        method:"POST",
+    $("#loading-spinner").addClass('show');
+    fetch("https://cicsoft-web-api.herokuapp.com/lab_ideas", {
+        method: "POST",
         body: JSON.stringify(suggestionData),
         headers: requestHeaders
     }).then(response => response.json())
-    .then(result => {
-        $("#suggestionToast").removeClass("bg-warning bg-success bg-danger");
-        if (result["message"] === "Lab idea submitted successfully") {
-            $("#suggestionToast").addClass("bg-success");
-            $("#suggestionToastText").text(`Thank you for your suggestion!`);
-            $("#lab_suggestion_form").trigger("reset");
-        } else {
-            $("#suggestionToast").addClass("bg-danger");
-            $("#suggestionToastText").text("Something went wrong! Try again later.");
-        }
-        $("#suggestionToast").toast("show");
-    })
-    .catch(error => console.log('error', error));
+        .then(result => {
+            $("#suggestionToast").removeClass("bg-warning bg-success bg-danger");
+            if (result["message"] === "Lab idea submitted successfully") {
+                $("#suggestionToast").addClass("bg-success");
+                $("#suggestionToastText").text(`Thank you for your suggestion!`);
+                $("#labSuggestionForm").trigger("reset");
+            } else {
+                $("#suggestionToast").addClass("bg-danger");
+                $("#suggestionToastText").text("Something went wrong! Try again later.");
+            }
+            $("#suggestionToast").toast("show");
+        })
+        .catch(error => console.log('error', error))
+        .finally(() => {
+            $("#loading-spinner").removeClass('show')
+        });
+});
 
+// send Core Team application form data
+$("#joinForm").submit((event) => {
+    event.preventDefault();
+    let joinFormData = {
+        first_name: "", // REQUIRED
+        last_name: "", // REQUIRED
+        umass_email: "", // REQUIRED
+        github_link: "",
+        linkedin_link: "",
+        team: "", // REQUIRED, COMMA-SEPARATED
+        graduation_year: 0, // REQUIRED
+        question_1_response: "", // REQUIRED, answer to "Why do you want to join CICSoft's Core Team? What do you expect to gain from this experience?" should be passed
+        question_2_response: "", // REQUIRED, answer to "What are some of your skills and experiences that will be beneficial for the team?" should be passed
+    }
+    joinFormData["first_name"] = $("#joinFirstName").val();
+    joinFormData["last_name"] = $("#joinLastName").val();
+    joinFormData["umass_email"] = $("#joinEmail").val();
+    joinFormData["graduation_year"] = parseInt($("#joinGraduationYear").val());
+    [
+        "#teamLogistics",
+        "#teamSocialMedia",
+        "#teamTeaching",
+        "#teamUnsure"
+    ].forEach(team => {
+        if ($(team).is(':checked')) {
+            if (joinFormData["team"].length === 0) {
+                joinFormData["team"] = $(team).val();
+            } else {
+                joinFormData["team"] = joinFormData["team"].concat(", ", $(team).val());
+            }
+        }
+    })
+    joinFormData["github_link"] = `https://github.com/${$("#joinGitHub").val()}`;
+    joinFormData["linkedin_link"] = `https://linkedin.com/in/${$("#joinLinkedIn").val()}`;
+    joinFormData["question_1_response"] = $("#joinQuestion1").val();
+    joinFormData["question_2_response"] = $("#joinQuestion2").val();
+
+    let requestHeaders = new Headers();
+    requestHeaders.append("Content-Type", "application/json");
+    $("#registerToast").toast({ autohide: true, delay: 3000 });
+
+    $("#loading-spinner").addClass('show');
+    fetch("https://cicsoft-web-api.herokuapp.com/core/apply", {
+        method: "POST",
+        body: JSON.stringify(joinFormData),
+        headers: requestHeaders,
+    })
+        .then(response => response.json())
+        .then(result => {
+            $("#registerToast").removeClass("bg-warning bg-success bg-danger");
+            if (result["message"] === "Candidate applied successfully") {
+                $("#registerToast").addClass("bg-success");
+                $("#registerToastText").text("You have successfully applied!");
+                $("#joinForm").trigger("reset");
+            } else if (result["message"] === "Candidate already applied") {
+                $("#registerToast").addClass("bg-warning");
+                $("#registerToastText").text("You have already applied!");
+                $("#joinForm").trigger("reset");
+            } else {
+                $("#registerToast").addClass("bg-danger");
+                $("#registerToastText").text("Something went wrong! Try again later.");
+            }
+            $("#registerToast").toast("show");
+        })
+        .catch(error => console.log('error', error))
+        .finally(() => {
+            $("#loading-spinner").removeClass('show')
+        });
 });
 
 $('.submit-poll').click((event) => {
@@ -149,28 +242,32 @@ $('.submit-poll').click((event) => {
     let requestBody = {
         "poll_value": event.target.value
     }
-    
+
     $('.modal').modal('hide');
     $("#pollToast").toast({ autohide: true, delay: 3000 });
 
+    $("#loading-spinner").addClass('show');
     fetch("https://cicsoft-web-api.herokuapp.com/technology_poll", {
         method: "POST",
         body: JSON.stringify(requestBody),
         headers: requestHeaders,
     }).then(response => response.json())
-    .then(result => {
-        $("#pollToast").removeClass("bg-warning bg-success bg-danger");
-        if (result["message"] === "Technology poll submitted successfully") {
-            $("#pollToast").addClass("bg-success");
-            $("#pollToastText").text(`You have successfully voted for ${event.target.value}!`);
-            $("#applyForm").trigger("reset");
-        } else {
-            $("#pollToast").addClass("bg-danger");
-            $("#pollToastText").text("Something went wrong! Try again later.");
-        }
-        $("#pollToast").toast("show");
-    })
-    .catch(error => console.log('error', error));
+        .then(result => {
+            $("#pollToast").removeClass("bg-warning bg-success bg-danger");
+            if (result["message"] === "Technology poll submitted successfully") {
+                $("#pollToast").addClass("bg-success");
+                $("#pollToastText").text(`You have successfully voted for ${event.target.value}!`);
+                $("#applyForm").trigger("reset");
+            } else {
+                $("#pollToast").addClass("bg-danger");
+                $("#pollToastText").text("Something went wrong! Try again later.");
+            }
+            $("#pollToast").toast("show");
+        })
+        .catch(error => console.log('error', error))
+        .finally(() => {
+            $("#loading-spinner").removeClass('show')
+        });
 });
 
 particlesJS(

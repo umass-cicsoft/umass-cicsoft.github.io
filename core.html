@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>CICSoft</title>
+        <meta
+            name="description"
+            content="CICSoft provides a collaborative environment for members to enhance their technical capabilities while developing applications. CICSoft creates an atmosphere for students to learn application development from the ground up through weekly sessions. Our Lab division aims to develop and publish next-generation apps for UMass and the greater community. Join CICSoft's Annual Appathon to turn your concept into a reality."
+        />
+        <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="./assets/css/main.css" />
+        <link rel="stylesheet" href="./assets/css/slider.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+        <link rel="icon" href="favicon.ico" />
+    </head>
+    <body>
+        <!-- BEGIN Particles.js -->
+        <div id="particles-js"></div>
+        <!-- END Particles.js -->
+
+        <!-- BEGIN Toasts -->
+        <div class="position-fixed start-50 translate-middle-x p-5" style="z-index: 3">
+            <div id="registerToast" class="toast align-items-center text-white m-1" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                    <div id="registerToastText" class="toast-body"></div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
+            <div id="pollToast" class="toast align-items-center text-white m-1" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                    <div id="pollToastText" class="toast-body"></div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
+            <div id="suggestionToast" class="toast align-items-center text-white m-1" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                    <div id="suggestionToastText" class="toast-body"></div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+        <!-- END Toasts -->
+
+        <!-- BEGIN Navigation Bar -->
+        <div id="navbar-container" class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container-fluid">
+                    <a href="/#home">
+                        <img id="navbar-brand-logo" src="./assets/img/navbarLogo.png" alt="CICSoft" />
+                    </a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item"><a id="aboutLink" class="nav-link" aria-current="page" href="/#about">ABOUT</a></li>
+                            <li class="nav-item"><a id="technologyPollLink" class="nav-link" aria-current="page" href="/#technology-poll">TECHNOLOGY POLL</a></li>
+                            <!-- <li class="nav-item"><a id="appShowcaseLink" class="nav-link" href="#app-showcase">APP SHOWCASE</a></li> -->
+                            <li class="nav-item"><a id="syllabusLink" class="nav-link" href="/#syllabus">SYLLABUS</a></li>
+                            <li class="nav-item"><a id="applyLink" class="nav-link" href="/#apply">APPLY</a></li>
+                            <li class="nav-item"><a id="labSuggestionLink" class="nav-link" href="/#lab-suggestion">LAB SUGGESTION</a></li>
+                            <!-- <li class="nav-item"><a id="faqsLink" class="nav-link" href="#faqs">FAQS</a></li> -->
+                            <li class="nav-item"><a id="joinLink" class="nav-link" href="/apply.html#join-us">JOIN US</a></li>
+                            <li class="nav-item"><a id="teamLink" class="nav-link" href="/#team">TEAM</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- END Navigation Bar -->
+
+        <!-- BEGIN Home Section -->
+        <div id="home" class="section">
+            <div class="home-container">
+                <div id="home-header"><img src="./assets/img/navbarLogo.png" alt="CICSoft" /></div>
+                <h4 id="home-subheader" class="text-white">
+                    We aim to provide a collaborative environment for students to enhance their technical skills while developing applications!
+                </h4>
+            </div>
+        </div>
+        <div class="social-media-overlay">
+            <a href="https://www.instagram.com/cicsoft/" target="_blank"><img src="./assets/svg/Instagram.svg" alt="Instagram" /></a>
+            <a href="https://discord.gg/Ja9guat77q" target="_blank"><img src="./assets/svg/Discord.svg" alt="Discord" /></a>
+            <a href="mailto:cicsoft@cs.umass.edu" target="_blank"><img src="./assets/svg/Gmail.svg" alt="Gmail" /></a>
+        </div>
+        <!-- END Home Section -->
+
+        <!-- BEGIN Loader -->
+        <div id="loading-spinner">
+            <div class="spinner-border text-danger" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+        <!-- END Loader -->
+
+        <!-- BEGIN Join Us Section -->
+        <div id="join-us" class="section">
+            <div class="section-header row justify-content-center align-items-center text-center">Become a part of our Core Team</div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-10 mx-auto">
+                        <p class="lead" style="text-align: center">
+                            We are looking for people who can join or manage our sub-teams successfully. Learn more about the responsibilities
+                            <a
+                                style="color: white !important"
+                                href="https://docs.google.com/document/d/15iS3E2tfX-LqlvjWhFvh3IgC2rdYvkp1m3-sgL0NhJk/edit?usp=sharing"
+                                target="_blank"
+                                >here</a
+                            >!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="form-container">
+                <form id="joinForm">
+                    <div class="row">
+                        <div class="col-md mb-3">
+                            <label for="joinFirstName" class="form-label">First Name <span style="color: red">*</span></label>
+                            <input required type="text" class="form-control" id="joinFirstName" placeholder="J." />
+                        </div>
+                        <div class="col-md mb-3">
+                            <label for="joinLastName" class="form-label">Last Name <span style="color: red">*</span></label>
+                            <input required type="text" class="form-control" id="joinLastName" placeholder="Doe" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md mb-3">
+                            <label for="joinEmail" class="form-label">UMass Email <span style="color: red">*</span></label>
+                            <input required type="email" class="form-control" id="joinEmail" placeholder="jdoe@umass.edu" aria-describedby="emailHelp" />
+                        </div>
+                        <div class="col-md mb-3">
+                            <label for="joinGraduationYear" class="form-label">Graduation Year <span style="color: red">*</span></label>
+                            <select required class="form-select" id="joinGraduationYear" aria-label="Graduation Year Selection">
+                                <option disabled value="" selected>Select your graduation year</option>
+                                <option value="2022">2022</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                                <option value="2026">2026</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md mb-3">
+                            <label for="joinGitHub" class="form-label">GitHub Profile</label>
+                            <div class="input-group">
+                                <span class="input-group-text" id="joinGitHubBase">https://github.com/</span>
+                                <input
+                                    type="text"
+                                    pattern="^[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}$"
+                                    class="form-control"
+                                    id="joinGitHub"
+                                    aria-describedby="joinGitHub"
+                                    placeholder="jdoe"
+                                />
+                            </div>
+                        </div>
+                        <div class="col-md mb-3">
+                            <label for="joinLinkedIn" class="form-label">LinkedIn Profile</label>
+                            <div class="input-group">
+                                <span class="input-group-text" id="joinLinkedInBase">https://linkedin.com/in/</span>
+                                <input
+                                    type="text"
+                                    pattern="[a-zA-Z0-9/~\-_,&=\?\.;]+[^\.,\s<]"
+                                    class="form-control"
+                                    id="joinLinkedIn"
+                                    aria-describedby="joinLinkedIn"
+                                    placeholder="jdoe"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="joinTeams" class="form-label">Which teams are you interested in joining? <span style="color: red">*</span></label>
+                        <div class="row">
+                            <div class="col-lg">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch" value="Logistics Team" id="teamLogistics" />
+                                    <label class="form-check-label" for="teamLogistics"> Logistics Team </label>
+                                </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch" value="Social Media Team" id="teamSocialMedia" />
+                                    <label class="form-check-label" for="teamSocialMedia"> Social Media Team </label>
+                                </div>
+                            </div>
+                            <div class="col-lg">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch" value="Teaching Team" id="teamTeaching" />
+                                    <label class="form-check-label" for="teamTeaching"> Teaching Team </label>
+                                </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch" value="Unsure" id="teamUnsure" />
+                                    <label class="form-check-label" for="teamUnsure"> Unsure </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="joinQuestion1" class="form-label"
+                            >Why do you want to join CICSoft's Core Team? What do you expect to gain from this experience? <span style="color: red">*</span></label
+                        >
+                        <textarea required class="form-control" id="joinQuestion1" placeholder="I am interested in ..."></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="joinQuestion2" class="form-label"
+                            >What are some of your skills and experiences that will be beneficial for the team? <span style="color: red">*</span></label
+                        >
+                        <textarea required class="form-control" id="joinQuestion2" placeholder="I have experience with ..."></textarea>
+                    </div>
+                    <div class="container text-center">
+                        <button type="submit" class="btn btn-danger m-1">Submit</button>
+                        <button type="reset" class="btn btn-danger m-1">Reset</button>
+                    </div>
+                </form>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-10 mx-auto my-3">
+                        <p class="lead" style="text-align: center">
+                            If you are not interested in joining the core team, we would encourage you to
+                            <a
+                                style="color: white !important"
+                                href="/#apply"
+                                >apply to be a member</a
+                            > instead!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END Join Us Section -->
+
+        <script src="./assets/js/popper.min.js"></script>
+        <script src="./assets/js/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <script src="./assets/js/bootstrap.min.js"></script>
+        <script src="./assets/js/main.js"></script>
+    </body>
+</html>
