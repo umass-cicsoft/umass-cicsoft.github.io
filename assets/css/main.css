@@ -348,5 +348,8 @@ body {
 
 .techPollPie{
     display: flex;
-    
+}
+
+.LI-profile-badge {
+    width: fit-content !important;
 }
