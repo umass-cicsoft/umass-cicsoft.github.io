@@ -138,7 +138,6 @@ $('#labSuggestionForm').submit((event) => {
         email: $("#labSuggestionEmail").val(), // REQUIRED
         idea_text: $("#labSuggestionQuestion").val() // REQUIRED
     }
-    console.log(suggestionData);
     let requestHeaders = new Headers();
     requestHeaders.append("Content-Type", "application/json");
     $("#loading-spinner").addClass('show');
