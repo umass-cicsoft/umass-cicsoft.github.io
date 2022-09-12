@@ -59,6 +59,7 @@
 }
 
 .owl-dots {
+    display: none;
     text-align: center;
     margin-top: 40px;
 }
