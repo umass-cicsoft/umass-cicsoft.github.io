@@ -1,174 +1,165 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>CICSoft</title>
-        <meta
-            name="description"
-            content="CICSoft provides a collaborative environment for members to enhance their technical capabilities while developing applications. CICSoft creates an atmosphere for students to learn application development from the ground up through weekly sessions. Our Lab division aims to develop and publish next-generation apps for UMass and the greater community. Join CICSoft's Annual Appathon to turn your concept into a reality."
-        />
-        <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="./assets/css/main.css" />
-        <link rel="stylesheet" href="./assets/css/slider.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-        <link rel="icon" href="favicon.ico" />
-        <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-core.min.js"></script>
-        <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-pie.min.js"></script>
-    </head>
-    <body>
-        <!-- BEGIN Particles.js -->
-        <div id="particles-js"></div>
-        <!-- END Particles.js -->
 
-        <!-- BEGIN Toasts -->
-        <div class="position-fixed start-50 translate-middle-x p-5" style="z-index: 3">
-            <div id="registerToast" class="toast align-items-center text-white m-1" role="alert" aria-live="assertive" aria-atomic="true">
-                <div class="d-flex">
-                    <div id="registerToastText" class="toast-body"></div>
-                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-                </div>
-            </div>
-            <div id="pollToast" class="toast align-items-center text-white m-1" role="alert" aria-live="assertive" aria-atomic="true">
-                <div class="d-flex">
-                    <div id="pollToastText" class="toast-body"></div>
-                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-                </div>
-            </div>
-            <div id="suggestionToast" class="toast align-items-center text-white m-1" role="alert" aria-live="assertive" aria-atomic="true">
-                <div class="d-flex">
-                    <div id="suggestionToastText" class="toast-body"></div>
-                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-                </div>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>CICSoft</title>
+    <meta name="description" content="CICSoft provides a collaborative environment for members to enhance their technical capabilities while developing applications. CICSoft creates an atmosphere for students to learn application development from the ground up through weekly sessions. Our Lab division aims to develop and publish next-generation apps for UMass and the greater community. Join CICSoft's Annual Appathon to turn your concept into a reality." />
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/slider.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="icon" href="favicon.ico" />
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.0.1/js/anychart-pie.min.js"></script>
+</head>
+
+<body>
+    <!-- BEGIN Particles.js -->
+    <div id="particles-js"></div>
+    <!-- END Particles.js -->
+
+    <!-- BEGIN Toasts -->
+    <div class="position-fixed start-50 translate-middle-x p-5" style="z-index: 3">
+        <div id="registerToast" class="toast align-items-center text-white m-1" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div id="registerToastText" class="toast-body"></div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
         </div>
-        <!-- END Toasts -->
+        <div id="pollToast" class="toast align-items-center text-white m-1" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div id="pollToastText" class="toast-body"></div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+        <div id="suggestionToast" class="toast align-items-center text-white m-1" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div id="suggestionToastText" class="toast-body"></div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+    <!-- END Toasts -->
 
-        <!-- BEGIN Navigation Bar -->
-        <div id="navbar-container" class="container-fluid">
-            <nav class="navbar navbar-expand-lg navbar-dark">
-                <div class="container-fluid">
-                    <a href="/#home">
-                        <img id="navbar-brand-logo" src="./assets/img/navbarLogo.png" alt="CICSoft" />
-                    </a>
-                    <button
-                        class="navbar-toggler"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent"
-                        aria-controls="navbarSupportedContent"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
-                    >
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item"><a id="aboutLink" class="nav-link" aria-current="page" href="/#about">ABOUT</a></li>
-                            <!-- <li class="nav-item"><a id="technologyPollLink" class="nav-link" aria-current="page" href="/#technology-poll">TECHNOLOGY POLL</a></li> -->
-                            <!-- <li class="nav-item"><a id="appShowcaseLink" class="nav-link" href="#app-showcase">APP SHOWCASE</a></li> -->
-                            <li class="nav-item"><a id="syllabusLink" class="nav-link" href="/#syllabus">SYLLABUS</a></li>
-                            <li class="nav-item"><a id="applyLink" class="nav-link" href="/#apply">APPLY</a></li>
-                            <li class="nav-item"><a id="labSuggestionLink" class="nav-link" href="/#lab-suggestion">LAB SUGGESTION</a></li>
-                            <!-- <li class="nav-item"><a id="faqsLink" class="nav-link" href="#faqs">FAQS</a></li> -->
-                            <!-- <li class="nav-item"><a id="joinLink" class="nav-link" href="/core.html#join-us">JOIN US</a></li> -->
-                            <li class="nav-item"><a id="teamLink" class="nav-link" href="/#team">TEAM</a></li>
-                        </ul>
+    <!-- BEGIN Navigation Bar -->
+    <div id="navbar-container" class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a href="/#home">
+                    <img id="navbar-brand-logo" src="./assets/img/navbarLogo.png" alt="CICSoft" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a id="aboutLink" class="nav-link" aria-current="page" href="/#about">ABOUT</a></li>
+                        <!-- <li class="nav-item"><a id="technologyPollLink" class="nav-link" aria-current="page" href="/#technology-poll">TECHNOLOGY POLL</a></li> -->
+                        <!-- <li class="nav-item"><a id="appShowcaseLink" class="nav-link" href="#app-showcase">APP SHOWCASE</a></li> -->
+                        <li class="nav-item"><a id="syllabusLink" class="nav-link" href="/#syllabus">SYLLABUS</a></li>
+                        <li class="nav-item"><a id="applyLink" class="nav-link" href="/#apply">APPLY</a></li>
+                        <li class="nav-item"><a id="labSuggestionLink" class="nav-link" href="/#lab-suggestion">LAB SUGGESTION</a></li>
+                        <!-- <li class="nav-item"><a id="faqsLink" class="nav-link" href="#faqs">FAQS</a></li> -->
+                        <!-- <li class="nav-item"><a id="joinLink" class="nav-link" href="/core.html#join-us">JOIN US</a></li> -->
+                        <li class="nav-item"><a id="teamLink" class="nav-link" href="/#team">TEAM</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- END Navigation Bar -->
+
+    <!-- BEGIN Home Section -->
+    <div id="home" class="section">
+        <div class="home-container">
+            <div id="home-header"><img src="./assets/img/navbarLogo.png" alt="CICSoft" /></div>
+            <h4 id="home-subheader" class="text-white">
+                We aim to provide a collaborative environment for students to enhance their technical skills while developing applications!
+            </h4>
+        </div>
+    </div>
+    <div class="social-media-overlay">
+        <a href="https://www.instagram.com/cicsoft/" target="_blank"><img src="./assets/svg/Instagram.svg" alt="Instagram" /></a>
+        <a href="https://discord.gg/Ja9guat77q" target="_blank"><img src="./assets/svg/Discord.svg" alt="Discord" /></a>
+        <a href="mailto:cicsoft@cs.umass.edu" target="_blank"><img src="./assets/svg/Gmail.svg" alt="Gmail" /></a>
+    </div>
+    <!-- END Home Section -->
+
+    <!-- BEGIN Loader -->
+    <div id="loading-spinner">
+        <div class="spinner-border text-danger" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    <!-- END Loader -->
+
+    <!-- BEGIN About Section -->
+    <div id="about" class="section" style="font-family: Lexend">
+        <div class="section-header row justify-content-center align-items-center text-center p-3">About Us</div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-10 mx-auto">
+                    <p class="lead" style="text-align: justify">
+                        CICSoft provides a collaborative environment for members to enhance their technical capabilities while developing applications. CICSoft creates an
+                        atmosphere for students to learn application development from the ground up through weekly sessions. Our Lab division aims to develop and publish
+                        next-generation apps for UMass and the greater community.
+                    </p>
+                </div>
+            </div>
+            <div class="row justify-content-evenly">
+                <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 32rem">
+                    <div class="card-body text-center">
+                        <h3 class="card-title"><small>Weekly Sessions</small></h3>
+                        <p class="card-text lead" style="text-align: justify">
+                            We aim to teach students to build great apps regardless of their major and field. CICSoft aims to enhance students' technical skills and bring their
+                            ideas to life by teaching native software like Android studio and XCode as well as cutting-edge technologies like Flutter. Besides a spoonful of
+                            compassion, CICSoft does not require any prior experience or skill.
+                        </p>
+                        <a type="button" class="btn btn-dark m-1" href="/#apply">Register Now</a>
                     </div>
                 </div>
-            </nav>
-        </div>
-        <!-- END Navigation Bar -->
-
-        <!-- BEGIN Home Section -->
-        <div id="home" class="section">
-            <div class="home-container">
-                <div id="home-header"><img src="./assets/img/navbarLogo.png" alt="CICSoft" /></div>
-                <h4 id="home-subheader" class="text-white">
-                    We aim to provide a collaborative environment for students to enhance their technical skills while developing applications!
-                </h4>
-            </div>
-        </div>
-        <div class="social-media-overlay">
-            <a href="https://www.instagram.com/cicsoft/" target="_blank"><img src="./assets/svg/Instagram.svg" alt="Instagram" /></a>
-            <a href="https://discord.gg/Ja9guat77q" target="_blank"><img src="./assets/svg/Discord.svg" alt="Discord" /></a>
-            <a href="mailto:cicsoft@cs.umass.edu" target="_blank"><img src="./assets/svg/Gmail.svg" alt="Gmail" /></a>
-        </div>
-        <!-- END Home Section -->
-
-        <!-- BEGIN Loader -->
-        <div id="loading-spinner">
-            <div class="spinner-border text-danger" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
-        </div>
-        <!-- END Loader -->
-
-        <!-- BEGIN About Section -->
-        <div id="about" class="section" style="font-family: Lexend">
-            <div class="section-header row justify-content-center align-items-center text-center p-3">About Us</div>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-10 mx-auto">
-                        <p class="lead" style="text-align: justify">
-                            CICSoft provides a collaborative environment for members to enhance their technical capabilities while developing applications. CICSoft creates an
-                            atmosphere for students to learn application development from the ground up through weekly sessions. Our Lab division aims to develop and publish
-                            next-generation apps for UMass and the greater community.
+                <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 32rem">
+                    <div class="card-body text-center">
+                        <h3 class="card-title"><small>Tech Hours</small></h3>
+                        <p class="card-text lead" style="text-align: justify">
+                            Beginning this semester, we intend to hold technology hours periodically to explore intriguing tools and methods like Amazon Web Services, Firebase,
+                            CI/CD pipelines that would aid in developing robust softwares. We will also cover reviews and discussions about recent and upcoming trends in
+                            technology, such as popular products and solutions.
                         </p>
                     </div>
                 </div>
-                <div class="row justify-content-evenly">
-                    <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 32rem">
-                        <div class="card-body text-center">
-                            <h3 class="card-title"><small>Weekly Sessions</small></h3>
-                            <p class="card-text lead" style="text-align: justify">
-                                We aim to teach students to build great apps regardless of their major and field. CICSoft aims to enhance students' technical skills and bring their
-                                ideas to life by teaching native software like Android studio and XCode as well as cutting-edge technologies like Flutter. Besides a spoonful of
-                                compassion, CICSoft does not require any prior experience or skill.
-                            </p>
-                            <a type="button" class="btn btn-dark m-1" href="/#apply">Register Now</a>
-                        </div>
-                    </div>
-                    <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 32rem">
-                        <div class="card-body text-center">
-                            <h3 class="card-title"><small>Tech Hours</small></h3>
-                            <p class="card-text lead" style="text-align: justify">
-                                Beginning this semester, we intend to hold technology hours periodically to explore intriguing tools and methods like Amazon Web Services, Firebase,
-                                CI/CD pipelines that would aid in developing robust softwares. We will also cover reviews and discussions about recent and upcoming trends in
-                                technology, such as popular products and solutions.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 32rem">
-                        <div class="card-body text-center">
-                            <h3 class="card-title"><small>Lab Division</small></h3>
-                            <p class="card-text lead" style="text-align: justify">
-                                Our mission is to create amazing apps for UMass and the surrounding community, in the spirit of Manning CICS' goal of "computing for the common
-                                good". Each year, lab developers will be hired to work on certain projects throughout the year. We expect lab developers to have some experience,
-                                which they would gain as a member!
-                            </p>
-                            <button type="button" class="btn btn-dark m-1" data-bs-toggle="modal" data-bs-target="#labApply">Become a Developer</button>
-                            <div class="modal fade" id="labApply" tabindex="-1" aria-labelledby="labApplyLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content bg-dark text-white">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="labApplyLabel">Interested in joining our Lab Division?</h5>
-                                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            Reach out to us by email at <a href="mailto:cicsoft@cs.umass.edu?subject=Interested in CICSoft Lab Division">cicsoft@cs.umass.edu</a> or
-                                            on our Instagram <a href="https://www.instagram.com/cicsoft/" target="_blank">@cicsoft</a> to indicate your interest in becoming a lab
-                                            developer!
-                                        </div>
+                <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 32rem">
+                    <div class="card-body text-center">
+                        <h3 class="card-title"><small>Lab Division</small></h3>
+                        <p class="card-text lead" style="text-align: justify">
+                            Our mission is to create amazing apps for UMass and the surrounding community, in the spirit of Manning CICS' goal of "computing for the common
+                            good". Each year, lab developers will be hired to work on certain projects throughout the year. We expect lab developers to have some experience,
+                            which they would gain as a member!
+                        </p>
+                        <button type="button" class="btn btn-dark m-1" data-bs-toggle="modal" data-bs-target="#labApply">Become a Developer</button>
+                        <div class="modal fade" id="labApply" tabindex="-1" aria-labelledby="labApplyLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content bg-dark text-white">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="labApplyLabel">Interested in joining our Lab Division?</h5>
+                                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Reach out to us by email at <a href="mailto:cicsoft@cs.umass.edu?subject=Interested in CICSoft Lab Division">cicsoft@cs.umass.edu</a> or
+                                        on our Instagram <a href="https://www.instagram.com/cicsoft/" target="_blank">@cicsoft</a> to indicate your interest in becoming a lab
+                                        developer!
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 32rem">
+                </div>
+                <!-- <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 32rem">
                         <div class="card-body text-center">
                             <h3 class="card-title"><small>Core Team</small></h3>
                             <p class="card-text lead" style="text-align: justify">
@@ -179,13 +170,13 @@
                             <a type="button" class="btn btn-dark m-1" href="/core.html#join-us">Join Us</a>
                         </div>
                     </div> -->
-                </div>
             </div>
         </div>
-        <!-- END About Section -->
+    </div>
+    <!-- END About Section -->
 
-        <!-- BEGIN Technology Poll Section -->
-        <!-- <div id="technology-poll" class="section" style="font-family: Lexend">
+    <!-- BEGIN Technology Poll Section -->
+    <!-- <div id="technology-poll" class="section" style="font-family: Lexend">
             <div class="section-header row justify-content-center align-items-center text-center">Technology Poll Results for Fall 2022</div>
             
             <div id = "techPollResults"  >
@@ -299,273 +290,259 @@
                 </div>
             </div>
         </div> -->
-        <!-- END Technology Poll Section -->
+    <!-- END Technology Poll Section -->
 
-        <!-- BEGIN App Showcase Section - DO NOT IMPLEMENT -->
-        <!-- <div id="app-showcase" class="section">
+    <!-- BEGIN App Showcase Section - DO NOT IMPLEMENT -->
+    <!-- <div id="app-showcase" class="section">
             <h1>"APP SHOWCASE" PLACEHOLDER</h1>
         </div> -->
-        <!-- END App Showcase Section - DO NOT IMPLEMENT -->
+    <!-- END App Showcase Section - DO NOT IMPLEMENT -->
 
-        <!-- BEGIN Syllabus Section -->
-        <div id="syllabus" class="section">
-            <!-- INSERT YOUR CODE HERE FOR THE SYLLABUS SECTION -->
-            <div class="section-header row justify-content-center align-items-center text-center">Weekly Syllabus</div>
-            <div class="carousel owl-carousel">
-                <div class="card">
-                    <p class="week-schedule">Session #0</p>
-                    <img src="./assets/img/syllabus/0.png" />
-                    <div class="details">
-                        <ul>
-                            <li>Syllabus Overview</li>
-                            <li>Motivation for React</li>
-                            <li>Motivation for React Native</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="card">
-                    <p class="week-schedule">Session #1</p>
-                    <img src="./assets/img/syllabus/1.png" />
-                    <div class="details">
-                        <ul>
-                            <li>Introduction to JavaScript</li>
-                            <li>JavaScript Fundamentals</li>
-                            <li>Short Project #1</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="card">
-                    <p class="week-schedule">Session #2</p>
-                    <img src="./assets/img/syllabus/2.png" />
-                    <div class="details">
-                        <ul>
-                            <li>Introduction to HTML and CSS</li>
-                            <li>Basics of Git and GitHub</li>
-                            <li>Short Project #2</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="card">
-                    <p class="week-schedule">Session #3</p>
-                    <img src="./assets/img/syllabus/3.png" />
-                    <div class="details">
-                        <ul>
-                            <li>Advanced CSS Usage</li>
-                            <li>JavaScript for Web</li>
-                            <li>Short Project #3</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="card">
-                    <p class="week-schedule">Session #4</p>
-                    <img src="./assets/img/syllabus/4.png" />
-                    <div class="details">
-                        <ul>
-                            <li>Getting Started with React</li>
-                            <li>App Structure and Components</li>
-                            <li>Portfolio Website Part 1</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="card">
-                    <p class="week-schedule">Session #5</p>
-                    <img src="./assets/img/syllabus/5.png" />
-                    <div class="details">
-                        <ul>
-                            <li>React Routing & Logic</li>
-                            <li>Lifecycle - React Hooks</li>
-                            <li>Portfolio Website Part 2</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="card">
-                    <p class="week-schedule">Session #6</p>
-                    <img src="./assets/img/syllabus/6.png" />
-                    <div class="details">
-                        <ul>
-                            <li>Conditional Rendering</li>
-                            <li>Lists and Keys</li>
-                            <li>Finishing Portfolio Website</li>
-                        </ul>
-                    </div>
+    <!-- BEGIN Syllabus Section -->
+    <div id="syllabus" class="section">
+        <!-- INSERT YOUR CODE HERE FOR THE SYLLABUS SECTION -->
+        <div class="section-header row justify-content-center align-items-center text-center">Weekly Syllabus</div>
+        <div class="carousel owl-carousel">
+            <div class="card">
+                <p class="week-schedule">Session #0</p>
+                <img src="./assets/img/syllabus/0.png" />
+                <div class="details">
+                    <ul>
+                        <li>Syllabus Overview</li>
+                        <li>Motivation for React</li>
+                        <li>Motivation for React Native</li>
+                    </ul>
                 </div>
             </div>
-            <script>
-                $(".carousel").owlCarousel({
-                    margin: 10,
-                    loop: true,
-                    autoplay: true,
-                    autoplayTimeout: 3000,
-                    autoplayHoverPause: true,
-                    items: 3,
-                    responsive: {
-                        0: {
-                            items: 1,
-                        },
-                        600: {
-                            items: 2,
-                        },
-                        1000: {
-                            items: 3,
-                        },
-                    },
-                });
-            </script>
+            <div class="card">
+                <p class="week-schedule">Session #1</p>
+                <img src="./assets/img/syllabus/1.png" />
+                <div class="details">
+                    <ul>
+                        <li>Introduction to JavaScript</li>
+                        <li>JavaScript Fundamentals</li>
+                        <li>Short Project #1</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <p class="week-schedule">Session #2</p>
+                <img src="./assets/img/syllabus/2.png" />
+                <div class="details">
+                    <ul>
+                        <li>Introduction to HTML and CSS</li>
+                        <li>Basics of Git and GitHub</li>
+                        <li>Short Project #2</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <p class="week-schedule">Session #3</p>
+                <img src="./assets/img/syllabus/3.png" />
+                <div class="details">
+                    <ul>
+                        <li>Advanced CSS Usage</li>
+                        <li>JavaScript for Web</li>
+                        <li>Short Project #3</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <p class="week-schedule">Session #4</p>
+                <img src="./assets/img/syllabus/4.png" />
+                <div class="details">
+                    <ul>
+                        <li>Getting Started with React</li>
+                        <li>App Structure and Components</li>
+                        <li>Portfolio Website Part 1</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <p class="week-schedule">Session #5</p>
+                <img src="./assets/img/syllabus/5.png" />
+                <div class="details">
+                    <ul>
+                        <li>React Routing & Logic</li>
+                        <li>Lifecycle - React Hooks</li>
+                        <li>Portfolio Website Part 2</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <p class="week-schedule">Session #6</p>
+                <img src="./assets/img/syllabus/6.png" />
+                <div class="details">
+                    <ul>
+                        <li>Conditional Rendering</li>
+                        <li>Lists and Keys</li>
+                        <li>Finishing Portfolio Website</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <!-- END Syllabus Section -->
+        <script>
+            $(".carousel").owlCarousel({
+                margin: 10,
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                items: 3,
+                responsive: {
+                    0: {
+                        items: 1,
+                    },
+                    600: {
+                        items: 2,
+                    },
+                    1000: {
+                        items: 3,
+                    },
+                },
+            });
+        </script>
+    </div>
+    <!-- END Syllabus Section -->
 
-        <!-- BEGIN Apply Section -->
-        <div id="apply" class="section">
-            <!-- INSERT YOUR CODE HERE FOR THE APPLY SECTION -->
-            <div class="section-header row justify-content-center align-items-center text-center">Apply to become a Member</div>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-10 mx-auto">
-                        <p class="lead" style="text-align: center; margin-bottom: 25px">
-                            Want to learn how to build apps? Join us as a member so we can assist you in learning app development, regardless of your
-                            major and field!
-                        </p>
-                    </div>
+    <!-- BEGIN Apply Section -->
+    <div id="apply" class="section">
+        <!-- INSERT YOUR CODE HERE FOR THE APPLY SECTION -->
+        <div class="section-header row justify-content-center align-items-center text-center">Apply to become a Member</div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-10 mx-auto">
+                    <p class="lead" style="text-align: center; margin-bottom: 25px">
+                        Want to learn how to build apps? Join us as a member so we can assist you in learning app development, regardless of your
+                        major and field!
+                    </p>
                 </div>
             </div>
-            <div class="form-container">
-                <form id="applyForm">
-                    <div class="row">
-                        <div class="col-md mb-3">
-                            <label for="applyFirstName" class="form-label">First Name <span style="color: red">*</span></label>
-                            <input required type="text" class="form-control" id="applyFirstName" placeholder="J." />
-                        </div>
-                        <div class="col-md mb-3">
-                            <label for="applyLastName" class="form-label">Last Name <span style="color: red">*</span></label>
-                            <input required type="text" class="form-control" id="applyLastName" placeholder="Doe" />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md mb-3">
-                            <label for="applyEmail" class="form-label">UMass Email <span style="color: red">*</span></label>
-                            <input required type="email" class="form-control" id="applyEmail" placeholder="jdoe@umass.edu" aria-describedby="emailHelp" />
-                        </div>
-                        <div class="col-md mb-3">
-                            <label for="applyGraduationYear" class="form-label">Graduation Year <span style="color: red">*</span></label>
-                            <select required class="form-select" id="applyGraduationYear" aria-label="Graduation Year Selection">
-                                <option disabled value="" selected>Select your graduation year</option>
-                                <option value="2022">2022</option>
-                                <option value="2023">2023</option>
-                                <option value="2024">2024</option>
-                                <option value="2025">2025</option>
-                                <option value="2026">2026</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="applyMajors" class="form-label">Major(s) <span style="color: red">*</span></label>
-                        <div class="row">
-                            <div class="col-lg">
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" role="switch" value="Computer Science" id="majorComputerScience" />
-                                    <label class="form-check-label" for="majorComputerScience"> Computer Science </label>
-                                </div>
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" role="switch" value="Computer Engineering" id="majorComputerEngineering" />
-                                    <label class="form-check-label" for="majorComputerEngineering"> Computer Engineering </label>
-                                </div>
-                            </div>
-                            <div class="col-lg">
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" role="switch" value="Mathematics" id="majorMathematics" />
-                                    <label class="form-check-label" for="majorMathematics"> Mathematics </label>
-                                </div>
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" role="switch" value="Informatics" id="majorInformatics" />
-                                    <label class="form-check-label" for="majorInformatics"> Informatics </label>
-                                </div>
-                            </div>
-                            <div class="col-lg">
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" role="switch" value="Other" id="majorOther" />
-                                    <label class="form-check-label" for="majorOther"> Other </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md mb-3">
-                            <label for="applyGitHub" class="form-label">GitHub Profile</label>
-                            <div class="input-group">
-                                <span class="input-group-text" id="applyGitHubBase">https://github.com/</span>
-                                <input
-                                    type="text"
-                                    pattern="^[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}$"
-                                    class="form-control"
-                                    id="applyGitHub"
-                                    aria-describedby="applyGitHub"
-                                    placeholder="jdoe"
-                                />
-                            </div>
-                        </div>
-                        <div class="col-md mb-3">
-                            <label for="applyLinkedIn" class="form-label">LinkedIn Profile</label>
-                            <div class="input-group">
-                                <span class="input-group-text" id="applyLinkedInBase">https://linkedin.com/in/</span>
-                                <input
-                                    type="text"
-                                    pattern="[a-zA-Z0-9/~\-_,&=\?\.;]+[^\.,\s<]"
-                                    class="form-control"
-                                    id="applyLinkedIn"
-                                    aria-describedby="applyLinkedIn"
-                                    placeholder="jdoe"
-                                />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="applyQuestion" class="form-label">Why are you interested in joining CICSoft? <span style="color: red">*</span></label>
-                        <textarea required class="form-control" id="applyQuestion" placeholder="I want to learn more about ..."></textarea>
-                    </div>
-                    <div class="mb-3">
-                        <label for="applyReferral" class="form-label">How did you hear about us? <span style="color: red">*</span></label>
-                        <div class="row">
-                            <div class="col-lg">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="applyReferral" value="Instagram" id="referralInstagram" />
-                                    <label class="form-check-label" for="referralInstagram"> Instagram </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="applyReferral" value="Discord" id="referralDiscord" />
-                                    <label class="form-check-label" for="referralDiscord"> Discord </label>
-                                </div>
-                            </div>
-                            <div class="col-lg">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="applyReferral" value="CICSoft Website" id="referralCicsoftWebsite" />
-                                    <label class="form-check-label" for="referralCicsoftWebsite"> CICSoft Website </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="applyReferral" value="CICSoft Member" id="referralCicsoftMember" />
-                                    <label class="form-check-label" for="referralCicsoftMember"> CICSoft Member </label>
-                                </div>
-                            </div>
-                            <div class="col-lg">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="applyReferral" value="CICS Newsletter" id="referralCicsNewsletter" />
-                                    <label class="form-check-label" for="referralCicsNewsletter"> CICS Newsletter </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="applyReferral" value="Friend" id="referralFriends" />
-                                    <label class="form-check-label" for="referralFriends"> Friend(s) </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container text-center">
-                        <button type="submit" class="btn btn-danger m-1">Submit</button>
-                        <button type="reset" class="btn btn-danger m-1">Reset</button>
-                    </div>
-                </form>
-            </div>
-            <div class="container-fluid">
+        </div>
+        <div class="form-container">
+            <form id="applyForm">
                 <div class="row">
-                    <!-- <div class="col-sm-10 mx-auto mt-3">
+                    <div class="col-md mb-3">
+                        <label for="applyFirstName" class="form-label">First Name <span style="color: red">*</span></label>
+                        <input required type="text" class="form-control" id="applyFirstName" placeholder="J." />
+                    </div>
+                    <div class="col-md mb-3">
+                        <label for="applyLastName" class="form-label">Last Name <span style="color: red">*</span></label>
+                        <input required type="text" class="form-control" id="applyLastName" placeholder="Doe" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md mb-3">
+                        <label for="applyEmail" class="form-label">UMass Email <span style="color: red">*</span></label>
+                        <input required type="email" class="form-control" id="applyEmail" placeholder="jdoe@umass.edu" aria-describedby="emailHelp" />
+                    </div>
+                    <div class="col-md mb-3">
+                        <label for="applyGraduationYear" class="form-label">Graduation Year <span style="color: red">*</span></label>
+                        <select required class="form-select" id="applyGraduationYear" aria-label="Graduation Year Selection">
+                            <option disabled value="" selected>Select your graduation year</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
+                            <option value="2027">2027</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="applyMajors" class="form-label">Major(s) <span style="color: red">*</span></label>
+                    <div class="row">
+                        <div class="col-lg">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" value="Computer Science" id="majorComputerScience" />
+                                <label class="form-check-label" for="majorComputerScience"> Computer Science </label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" value="Computer Engineering" id="majorComputerEngineering" />
+                                <label class="form-check-label" for="majorComputerEngineering"> Computer Engineering </label>
+                            </div>
+                        </div>
+                        <div class="col-lg">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" value="Mathematics" id="majorMathematics" />
+                                <label class="form-check-label" for="majorMathematics"> Mathematics </label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" value="Informatics" id="majorInformatics" />
+                                <label class="form-check-label" for="majorInformatics"> Informatics </label>
+                            </div>
+                        </div>
+                        <div class="col-lg">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" value="Other" id="majorOther" />
+                                <label class="form-check-label" for="majorOther"> Other </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md mb-3">
+                        <label for="applyGitHub" class="form-label">GitHub Profile</label>
+                        <div class="input-group">
+                            <span class="input-group-text" id="applyGitHubBase">https://github.com/</span>
+                            <input type="text" pattern="^[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}$" class="form-control" id="applyGitHub" aria-describedby="applyGitHub" placeholder="jdoe" />
+                        </div>
+                    </div>
+                    <div class="col-md mb-3">
+                        <label for="applyLinkedIn" class="form-label">LinkedIn Profile</label>
+                        <div class="input-group">
+                            <span class="input-group-text" id="applyLinkedInBase">https://linkedin.com/in/</span>
+                            <input type="text" pattern="[a-zA-Z0-9/~\-_,&=\?\.;]+[^\.,\s<]" class="form-control" id="applyLinkedIn" aria-describedby="applyLinkedIn" placeholder="jdoe" />
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="applyQuestion" class="form-label">Why are you interested in joining CICSoft? <span style="color: red">*</span></label>
+                    <textarea required class="form-control" id="applyQuestion" placeholder="I want to learn more about ..."></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="applyReferral" class="form-label">How did you hear about us? <span style="color: red">*</span></label>
+                    <div class="row">
+                        <div class="col-lg">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="applyReferral" value="Instagram" id="referralInstagram" />
+                                <label class="form-check-label" for="referralInstagram"> Instagram </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="applyReferral" value="Discord" id="referralDiscord" />
+                                <label class="form-check-label" for="referralDiscord"> Discord </label>
+                            </div>
+                        </div>
+                        <div class="col-lg">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="applyReferral" value="CICSoft Website" id="referralCicsoftWebsite" />
+                                <label class="form-check-label" for="referralCicsoftWebsite"> CICSoft Website </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="applyReferral" value="CICSoft Member" id="referralCicsoftMember" />
+                                <label class="form-check-label" for="referralCicsoftMember"> CICSoft Member </label>
+                            </div>
+                        </div>
+                        <div class="col-lg">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="applyReferral" value="CICS Newsletter" id="referralCicsNewsletter" />
+                                <label class="form-check-label" for="referralCicsNewsletter"> CICS Newsletter </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="applyReferral" value="Friend" id="referralFriends" />
+                                <label class="form-check-label" for="referralFriends"> Friend(s) </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container text-center">
+                    <button type="submit" class="btn btn-danger m-1">Submit</button>
+                    <button type="reset" class="btn btn-danger m-1">Reset</button>
+                </div>
+            </form>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <!-- <div class="col-sm-10 mx-auto mt-3">
                         <p class="lead" style="text-align: center">
                             If you are interested in working with the team behind the organization, we would encourage you to
                             <a
@@ -575,188 +552,180 @@
                             > as well!
                         </p>
                     </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- END Apply Section -->
+
+    <!-- BEGIN LAB SUGGESTION SECTION -->
+    <div id="lab-suggestion" class="section">
+        <div class="section-header row justify-content-center align-items-center text-center">Got an idea?</div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-10 mx-auto">
+                    <p class="lead" style="text-align: center; margin-bottom: 25px">
+                        Have a great concept for an app that you've always wanted to develop but are unsure where to begin? Our developers can assist you in making your vision
+                        a reality. Post your idea below and we'll get back to you. Your concept is your own; we were not inspired by Mark :)
+                    </p>
                 </div>
             </div>
         </div>
-        <!-- END Apply Section -->
-
-        <!-- BEGIN LAB SUGGESTION SECTION -->
-        <div id="lab-suggestion" class="section">
-            <div class="section-header row justify-content-center align-items-center text-center">Got an idea?</div>
-            <div class="container-fluid">
+        <div class="form-container">
+            <form id="labSuggestionForm">
                 <div class="row">
-                    <div class="col-sm-10 mx-auto">
-                        <p class="lead" style="text-align: center; margin-bottom: 25px">
-                            Have a great concept for an app that you've always wanted to develop but are unsure where to begin? Our developers can assist you in making your vision
-                            a reality. Post your idea below and we'll get back to you. Your concept is your own; we were not inspired by Mark :)
-                        </p>
+                    <div class="col-md mb-3">
+                        <label for="labSuggestionFirstName" class="form-label">First Name <span style="color: red">*</span></label>
+                        <input required type="text" class="form-control" id="labSuggestionFirstName" placeholder="J." />
+                    </div>
+                    <div class="col-md mb-3">
+                        <label for="labSuggestionLastName" class="form-label">Last Name <span style="color: red">*</span></label>
+                        <input required type="text" class="form-control" id="labSuggestionLastName" placeholder="Doe" />
                     </div>
                 </div>
-            </div>
-            <div class="form-container">
-                <form id="labSuggestionForm">
-                    <div class="row">
-                        <div class="col-md mb-3">
-                            <label for="labSuggestionFirstName" class="form-label">First Name <span style="color: red">*</span></label>
-                            <input required type="text" class="form-control" id="labSuggestionFirstName" placeholder="J." />
-                        </div>
-                        <div class="col-md mb-3">
-                            <label for="labSuggestionLastName" class="form-label">Last Name <span style="color: red">*</span></label>
-                            <input required type="text" class="form-control" id="labSuggestionLastName" placeholder="Doe" />
-                        </div>
+                <div class="row">
+                    <div class="col-md mb-3">
+                        <label for="labSuggestionEmail" class="form-label">Email <span style="color: red">*</span></label>
+                        <input required type="email" class="form-control" id="labSuggestionEmail" placeholder="jdoe@example.com" aria-describedby="emailHelp" />
                     </div>
-                    <div class="row">
-                        <div class="col-md mb-3">
-                            <label for="labSuggestionEmail" class="form-label">Email <span style="color: red">*</span></label>
-                            <input required type="email" class="form-control" id="labSuggestionEmail" placeholder="jdoe@example.com" aria-describedby="emailHelp" />
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="labSuggestionQuestion" class="form-label">What is your idea? <span style="color: red">*</span></label>
-                        <textarea required class="form-control" id="labSuggestionQuestion" placeholder="How about an app that ..."></textarea>
-                    </div>
-                    <div class="container text-center">
-                        <button type="submit" class="btn btn-danger m-1">Submit</button>
-                        <button type="reset" class="btn btn-danger m-1">Reset</button>
-                    </div>
-                </form>
-            </div>
-            <!-- <div class="row justify-content-center align-items-center text-center display-box-dark"> </div> -->
+                </div>
+                <div class="mb-3">
+                    <label for="labSuggestionQuestion" class="form-label">What is your idea? <span style="color: red">*</span></label>
+                    <textarea required class="form-control" id="labSuggestionQuestion" placeholder="How about an app that ..."></textarea>
+                </div>
+                <div class="container text-center">
+                    <button type="submit" class="btn btn-danger m-1">Submit</button>
+                    <button type="reset" class="btn btn-danger m-1">Reset</button>
+                </div>
+            </form>
         </div>
-        <!-- END LAB SUGGESTION SECTION -->
+        <!-- <div class="row justify-content-center align-items-center text-center display-box-dark"> </div> -->
+    </div>
+    <!-- END LAB SUGGESTION SECTION -->
 
-        <!-- BEGIN FAQs Section - DO NOT IMPLEMENT -->
-        <!-- <div id="faqs" class="section">
+    <!-- BEGIN FAQs Section - DO NOT IMPLEMENT -->
+    <!-- <div id="faqs" class="section">
             <h1>"FAQS" PLACEHOLDER</h1>
         </div> -->
-        <!-- END FAQs Section - DO NOT IMPLEMENT -->
+    <!-- END FAQs Section - DO NOT IMPLEMENT -->
 
-        <!-- BEGIN Team Section -->
-        <div id="team" class="section">
-            <!-- INSERT YOUR CODE HERE FOR THE TEAM SECTION -->
-            <div class="section-header row justify-content-center align-items-center text-center">Our Team</div>
-            <div class="row justify-content-center align-items-center text-center w-100">
-                <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 21rem">
-                    <picture>
-                        <source srcset="./assets/img/team/webp/aditya_vikram_singh.webp" type="image/webp" />
-                        <img src="./assets/img/team/jpg/aditya_vikram_singh.jpg" class="card-img-top rounded-circle" alt="Aditya Vikram Singh" />
-                    </picture>
-                    <div class="card-body text-center">
-                        <h4 class="card-title">Aditya Vikram Singh</h4>
-                        <h5 class="card-text">Co-President</h5>
-                        <a href="https://www.linkedin.com/in/avs1508/" target="_blank"><img class="team-social-icon" src="./assets/svg/LinkedIn.svg" alt="LinkedIn" /></a>
-                    </div>
-                </div>
-                <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 21rem">
-                    <picture>
-                        <source srcset="./assets/img/team/webp/kirat_arora.webp" type="image/webp" />
-                        <img src="./assets/img/team/jpg/kirat_arora.jpg" class="card-img-top rounded-circle" alt="Kirat Arora" />
-                    </picture>
-                    <div class="card-body text-center">
-                        <h4 class="card-title">Kirat Arora</h4>
-                        <h5 class="card-text">Co-President</h5>
-                        <a href="https://www.linkedin.com/in/kiratarora/" target="_blank"><img class="team-social-icon" src="./assets/svg/LinkedIn.svg" alt="LinkedIn" /></a>
-                    </div>
-                </div>
-                <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 21rem">
-                    <picture>
-                        <source srcset="./assets/img/team/webp/anshul_vemulapalli.webp" type="image/webp" />
-                        <img src="./assets/img/team/jpg/anshul_vemulapalli.jpg" class="card-img-top rounded-circle" alt="Anshul Vemulapalli" />
-                    </picture>
-                    <div class="card-body text-center">
-                        <h4 class="card-title">Anshul Vemulapalli</h4>
-                        <h5 class="card-text">Core Member</h5>
-                        <a href="https://www.linkedin.com/in/anshul-vemulapalli/" target="_blank"
-                            ><img class="team-social-icon" src="./assets/svg/LinkedIn.svg" alt="LinkedIn"
-                        /></a>
-                    </div>
-                </div>
-                <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 21rem">
-                    <picture>
-                        <source srcset="./assets/img/team/webp/mahika_arora.webp" type="image/webp" />
-                        <img src="./assets/img/team/jpg/mahika_arora.jpg" class="card-img-top rounded-circle" alt="Mahika Arora" />
-                    </picture>
-                    <div class="card-body text-center">
-                        <h4 class="card-title">Mahika Arora</h4>
-                        <h5 class="card-text">Core Member</h5>
-                        <a href="https://www.linkedin.com/in/mahika-arora/" target="_blank"><img class="team-social-icon" src="./assets/svg/LinkedIn.svg" alt="LinkedIn" /></a>
-                    </div>
-                </div>
-                <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 21rem">
-                    <picture>
-                        <source srcset="./assets/img/team/webp/makar_pronin.webp" type="image/webp" />
-                        <img src="./assets/img/team/jpg/makar_pronin.jpg" class="card-img-top rounded-circle" alt="Makar Pronin" />
-                    </picture>
-                    <div class="card-body text-center">
-                        <h4 class="card-title">Makar Pronin</h4>
-                        <h5 class="card-text">Core Member</h5>
-                        <a href="https://www.linkedin.com/in/makar-pronin-323431236/" target="_blank"
-                            ><img class="team-social-icon" src="./assets/svg/LinkedIn.svg" alt="LinkedIn"
-                        /></a>
-                    </div>
-                </div>
-                <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 21rem">
-                    <picture>
-                        <source srcset="./assets/img/team/webp/michael_xie.webp" type="image/webp" />
-                        <img src="./assets/img/team/jpg/michael_xie.jpg" class="card-img-top rounded-circle" alt="Michael Xie" />
-                    </picture>
-                    <div class="card-body text-center">
-                        <h4 class="card-title">Michael Xie</h4>
-                        <h5 class="card-text">Core Member</h5>
-                        <a href="https://www.linkedin.com/in/michael-xie-00664a195/" target="_blank"
-                            ><img class="team-social-icon" src="./assets/svg/LinkedIn.svg" alt="LinkedIn"
-                        /></a>
-                    </div>
-                </div>
-                <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 21rem">
-                    <picture>
-                        <source srcset="./assets/img/team/webp/sahil_gupta.webp" type="image/webp" />
-                        <img src="./assets/img/team/jpg/sahil_gupta.jpg" class="card-img-top rounded-circle" alt="Sahil Gupta" />
-                    </picture>
-                    <div class="card-body text-center">
-                        <h4 class="card-title">Sahil Gupta</h4>
-                        <h5 class="card-text">Core Member</h5>
-                        <a href="https://www.linkedin.com/in/sahilgupta17" target="_blank"><img class="team-social-icon" src="./assets/svg/LinkedIn.svg" alt="LinkedIn" /></a>
-                    </div>
-                </div>
-                <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 21rem">
-                    <picture>
-                        <source srcset="./assets/img/team/webp/shiven_patel.webp" type="image/webp" />
-                        <img src="./assets/img/team/jpg/shiven_patel.jpg" class="card-img-top rounded-circle" alt="Shiven Patel" />
-                    </picture>
-                    <div class="card-body text-center">
-                        <h4 class="card-title">Shiven Patel</h4>
-                        <h5 class="card-text">Core Member</h5>
-                        <a href="https://www.linkedin.com/in/shiven-patel110504/" target="_blank"
-                            ><img class="team-social-icon" src="./assets/svg/LinkedIn.svg" alt="LinkedIn"
-                        /></a>
-                    </div>
-                </div>
-                <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 21rem">
-                    <picture>
-                        <source srcset="./assets/img/team/webp/spencer_friedman.webp" type="image/webp" />
-                        <img src="./assets/img/team/jpg/spencer_friedman.jpg" class="card-img-top rounded-circle" alt="Spencer Friedman" />
-                    </picture>
-                    <div class="card-body text-center">
-                        <h4 class="card-title">Spencer Friedman</h4>
-                        <h5 class="card-text">Core Member</h5>
-                        <a href="https://www.linkedin.com/in/spencer-friedman/" target="_blank"><img class="team-social-icon" src="./assets/svg/LinkedIn.svg" alt="LinkedIn" /></a>
-                    </div>
-                </div>
-                <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 21rem">
-                    <picture>
-                        <source srcset="./assets/img/team/webp/manmeet_singh_tuteja.webp" type="image/webp" />
-                        <img src="./assets/img/team/jpg/manmeet_singh_tuteja.jpg" class="card-img-top rounded-circle" alt="Manmeet Singh Tuteja" />
-                    </picture>
-                    <div class="card-body text-center">
-                        <h4 class="card-title">Manmeet Singh Tuteja</h4>
-                        <h5 class="card-text">Advisor</h5>
-                        <a href="https://www.linkedin.com/in/mstuteja" target="_blank"><img class="team-social-icon" src="./assets/svg/LinkedIn.svg" alt="LinkedIn" /></a>
-                    </div>
+    <!-- BEGIN Team Section -->
+    <div id="team" class="section">
+        <!-- INSERT YOUR CODE HERE FOR THE TEAM SECTION -->
+        <div class="section-header row justify-content-center align-items-center text-center">Our Team</div>
+        <div class="row justify-content-center align-items-center text-center w-100">
+            <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 21rem">
+                <picture>
+                    <source srcset="./assets/img/team/webp/aditya_vikram_singh.webp" type="image/webp" />
+                    <img src="./assets/img/team/jpg/aditya_vikram_singh.jpg" class="card-img-top rounded-circle" alt="Aditya Vikram Singh" />
+                </picture>
+                <div class="card-body text-center">
+                    <h4 class="card-title">Aditya Vikram Singh</h4>
+                    <h5 class="card-text">Co-President</h5>
+                    <a href="https://www.linkedin.com/in/avs1508/" target="_blank"><img class="team-social-icon" src="./assets/svg/LinkedIn.svg" alt="LinkedIn" /></a>
                 </div>
             </div>
-            <!-- Sample Team Section - Uncomment when needed -->
-            <!-- <div class="row justify-content-center align-items-center text-center w-100">
+            <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 21rem">
+                <picture>
+                    <source srcset="./assets/img/team/webp/kirat_arora.webp" type="image/webp" />
+                    <img src="./assets/img/team/jpg/kirat_arora.jpg" class="card-img-top rounded-circle" alt="Kirat Arora" />
+                </picture>
+                <div class="card-body text-center">
+                    <h4 class="card-title">Kirat Arora</h4>
+                    <h5 class="card-text">Co-President</h5>
+                    <a href="https://www.linkedin.com/in/kiratarora/" target="_blank"><img class="team-social-icon" src="./assets/svg/LinkedIn.svg" alt="LinkedIn" /></a>
+                </div>
+            </div>
+            <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 21rem">
+                <picture>
+                    <source srcset="./assets/img/team/webp/anshul_vemulapalli.webp" type="image/webp" />
+                    <img src="./assets/img/team/jpg/anshul_vemulapalli.jpg" class="card-img-top rounded-circle" alt="Anshul Vemulapalli" />
+                </picture>
+                <div class="card-body text-center">
+                    <h4 class="card-title">Anshul Vemulapalli</h4>
+                    <h5 class="card-text">Core Member</h5>
+                    <a href="https://www.linkedin.com/in/anshul-vemulapalli/" target="_blank"><img class="team-social-icon" src="./assets/svg/LinkedIn.svg" alt="LinkedIn" /></a>
+                </div>
+            </div>
+            <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 21rem">
+                <picture>
+                    <source srcset="./assets/img/team/webp/mahika_arora.webp" type="image/webp" />
+                    <img src="./assets/img/team/jpg/mahika_arora.jpg" class="card-img-top rounded-circle" alt="Mahika Arora" />
+                </picture>
+                <div class="card-body text-center">
+                    <h4 class="card-title">Mahika Arora</h4>
+                    <h5 class="card-text">Core Member</h5>
+                    <a href="https://www.linkedin.com/in/mahika-arora/" target="_blank"><img class="team-social-icon" src="./assets/svg/LinkedIn.svg" alt="LinkedIn" /></a>
+                </div>
+            </div>
+            <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 21rem">
+                <picture>
+                    <source srcset="./assets/img/team/webp/makar_pronin.webp" type="image/webp" />
+                    <img src="./assets/img/team/jpg/makar_pronin.jpg" class="card-img-top rounded-circle" alt="Makar Pronin" />
+                </picture>
+                <div class="card-body text-center">
+                    <h4 class="card-title">Makar Pronin</h4>
+                    <h5 class="card-text">Core Member</h5>
+                    <a href="https://www.linkedin.com/in/makar-pronin-323431236/" target="_blank"><img class="team-social-icon" src="./assets/svg/LinkedIn.svg" alt="LinkedIn" /></a>
+                </div>
+            </div>
+            <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 21rem">
+                <picture>
+                    <source srcset="./assets/img/team/webp/michael_xie.webp" type="image/webp" />
+                    <img src="./assets/img/team/jpg/michael_xie.jpg" class="card-img-top rounded-circle" alt="Michael Xie" />
+                </picture>
+                <div class="card-body text-center">
+                    <h4 class="card-title">Michael Xie</h4>
+                    <h5 class="card-text">Core Member</h5>
+                    <a href="https://www.linkedin.com/in/michael-xie-00664a195/" target="_blank"><img class="team-social-icon" src="./assets/svg/LinkedIn.svg" alt="LinkedIn" /></a>
+                </div>
+            </div>
+            <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 21rem">
+                <picture>
+                    <source srcset="./assets/img/team/webp/sahil_gupta.webp" type="image/webp" />
+                    <img src="./assets/img/team/jpg/sahil_gupta.jpg" class="card-img-top rounded-circle" alt="Sahil Gupta" />
+                </picture>
+                <div class="card-body text-center">
+                    <h4 class="card-title">Sahil Gupta</h4>
+                    <h5 class="card-text">Core Member</h5>
+                    <a href="https://www.linkedin.com/in/sahilgupta17" target="_blank"><img class="team-social-icon" src="./assets/svg/LinkedIn.svg" alt="LinkedIn" /></a>
+                </div>
+            </div>
+            <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 21rem">
+                <picture>
+                    <source srcset="./assets/img/team/webp/shiven_patel.webp" type="image/webp" />
+                    <img src="./assets/img/team/jpg/shiven_patel.jpg" class="card-img-top rounded-circle" alt="Shiven Patel" />
+                </picture>
+                <div class="card-body text-center">
+                    <h4 class="card-title">Shiven Patel</h4>
+                    <h5 class="card-text">Core Member</h5>
+                    <a href="https://www.linkedin.com/in/shiven-patel110504/" target="_blank"><img class="team-social-icon" src="./assets/svg/LinkedIn.svg" alt="LinkedIn" /></a>
+                </div>
+            </div>
+            <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 21rem">
+                <picture>
+                    <source srcset="./assets/img/team/webp/spencer_friedman.webp" type="image/webp" />
+                    <img src="./assets/img/team/jpg/spencer_friedman.jpg" class="card-img-top rounded-circle" alt="Spencer Friedman" />
+                </picture>
+                <div class="card-body text-center">
+                    <h4 class="card-title">Spencer Friedman</h4>
+                    <h5 class="card-text">Core Member</h5>
+                    <a href="https://www.linkedin.com/in/spencer-friedman/" target="_blank"><img class="team-social-icon" src="./assets/svg/LinkedIn.svg" alt="LinkedIn" /></a>
+                </div>
+            </div>
+            <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 21rem">
+                <picture>
+                    <source srcset="./assets/img/team/webp/manmeet_singh_tuteja.webp" type="image/webp" />
+                    <img src="./assets/img/team/jpg/manmeet_singh_tuteja.jpg" class="card-img-top rounded-circle" alt="Manmeet Singh Tuteja" />
+                </picture>
+                <div class="card-body text-center">
+                    <h4 class="card-title">Manmeet Singh Tuteja</h4>
+                    <h5 class="card-text">Advisor</h5>
+                    <a href="https://www.linkedin.com/in/mstuteja" target="_blank"><img class="team-social-icon" src="./assets/svg/LinkedIn.svg" alt="LinkedIn" /></a>
+                </div>
+            </div>
+        </div>
+        <!-- Sample Team Section - Uncomment when needed -->
+        <!-- <div class="row justify-content-center align-items-center text-center w-100">
                 <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 21rem">
                     <picture>
                         <source srcset="./assets/img/team/webp/manmeet_singh_tuteja.webp" type="image/webp" />
@@ -768,20 +737,21 @@
                     </div>
                 </div>
             </div> -->
-        </div>
-        <!-- END Team Section -->
+    </div>
+    <!-- END Team Section -->
 
-        <!-- BEGIN Contact Footer -->
-        <!-- INSERT YOUR CODE HERE FOR THE CONTACT FOOTER -->
-        <!-- <div id="contact" class="section">
+    <!-- BEGIN Contact Footer -->
+    <!-- INSERT YOUR CODE HERE FOR THE CONTACT FOOTER -->
+    <!-- <div id="contact" class="section">
             <h1>"CONTACT" PLACEHOLDER</h1>
         </div> -->
-        <!-- END Contact Footer -->
+    <!-- END Contact Footer -->
 
-        <script src="./assets/js/popper.min.js"></script>
-        <script src="./assets/js/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-        <script src="./assets/js/bootstrap.min.js"></script>
-        <script src="./assets/js/main.js"></script>
-    </body>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+
 </html>
