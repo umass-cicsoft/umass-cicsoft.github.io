@@ -48,8 +48,8 @@ const displayNavLogo = function () {
             $("#applyLink").addClass("active");
         } else if (actualDisplayTop > syllabus) {
             $("#syllabusLink").addClass("active");
-        // } else if (actualDisplayTop > technologyPoll) {
-        //     $("#technologyPollLink").addClass("active");
+            // } else if (actualDisplayTop > technologyPoll) {
+            //     $("#technologyPollLink").addClass("active");
         } else if (actualDisplayTop > about) {
             $("#aboutLink").addClass("active");
         }
@@ -102,7 +102,7 @@ $("#applyForm").submit((event) => {
     $("#registerToast").toast({ autohide: true, delay: 3000 });
 
     $("#loading-spinner").addClass('show');
-    fetch("https://cicsoft-web-api.herokuapp.com/user/register", {
+    fetch("https://cicsoft-web-api.onrender.com/user/register", {
         method: "POST",
         body: JSON.stringify(applyFormData),
         headers: requestHeaders,
@@ -141,7 +141,7 @@ $('#labSuggestionForm').submit((event) => {
     let requestHeaders = new Headers();
     requestHeaders.append("Content-Type", "application/json");
     $("#loading-spinner").addClass('show');
-    fetch("https://cicsoft-web-api.herokuapp.com/lab_ideas", {
+    fetch("https://cicsoft-web-api.onrender.com/lab_ideas", {
         method: "POST",
         body: JSON.stringify(suggestionData),
         headers: requestHeaders
@@ -206,7 +206,7 @@ $("#joinForm").submit((event) => {
     $("#registerToast").toast({ autohide: true, delay: 3000 });
 
     $("#loading-spinner").addClass('show');
-    fetch("https://cicsoft-web-api.herokuapp.com/core/apply", {
+    fetch("https://cicsoft-web-api.onrender.com/core/apply", {
         method: "POST",
         body: JSON.stringify(joinFormData),
         headers: requestHeaders,
@@ -246,7 +246,7 @@ $('.submit-poll').click((event) => {
     $("#pollToast").toast({ autohide: true, delay: 3000 });
 
     $("#loading-spinner").addClass('show');
-    fetch("https://cicsoft-web-api.herokuapp.com/technology_poll", {
+    fetch("https://cicsoft-web-api.onrender.com/technology_poll", {
         method: "POST",
         body: JSON.stringify(requestBody),
         headers: requestHeaders,
