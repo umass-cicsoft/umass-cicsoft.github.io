@@ -189,6 +189,25 @@ body {
     color: white;
 }
 
+.owl-carousel .owl-nav .owl-prev,
+.owl-carousel .owl-nav .owl-next {
+    position: absolute;
+    top: 50%;
+    background: #869791;
+    color: #fff;
+    font-size: 50px !important;
+    margin: 0px;
+    cursor: pointer;
+}
+
+.owl-carousel .owl-nav .owl-prev {
+    left: 0px;
+}
+
+.owl-carousel .owl-nav .owl-next {
+    right: 0px;
+}
+
 #apply {
     background-color: #881c1c;
     background-image: url('../svg/Background.svg');

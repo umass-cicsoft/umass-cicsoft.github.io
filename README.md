@@ -6,7 +6,7 @@
 
 ![Brand Logo](https://raw.githubusercontent.com/umass-cicsoft/umass-cicsoft.github.io/main/assets/img/navbarLogo.png)
 
-**Check it out here: [umass-cicsoft.github.io](https://umass-cicsoft.github.io/)!**
+**Check it out here: [cicsoft.tech](https://www.cicsoft.tech/)!**
 
 ## How does it work?
 
