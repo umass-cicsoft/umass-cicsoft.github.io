@@ -74,11 +74,13 @@ body {
     align-items: center;
     width: 100%;
     padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 .section-header {
     display: flex;
-    padding: 0.5rem 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: -0.5rem;
     margin: 1.5rem;
     color: white;
     font-size: 3rem;
@@ -384,7 +386,21 @@ body {
     margin: 2rem !important;
 }
 
+.details {
+    text-align: center !important;
+}
+.hover-text {
+    display: none;
+}
+
+.card:hover .hover-text {
+    display: block;
+}
+/* .card:hover .card-img, */
+.card:hover .non-hover-text {
+    display: none;
+}
+
 #team .card:hover {
     background-color: #110f0f !important;
-    
 }

@@ -117,59 +117,59 @@
         <div class="carousel owl-carousel">
             <div class="card">
                 <p class="week-schedule">hackBits</p>
-                <img src="./assets/img/syllabus/0.png" />
+                <img class="card-img" src="./assets/img/syllabus/hackBits.png" />
                 <div class="details">
-                    <ul>
-                        <li>Introductions and Semester Plan</li>
-                        <li>Technology Poll for Fall 2023</li>
-                    </ul>
+                    Crack the Code to Your Future: Master the Art of Technical Interviews with HackBits!
+                </div>
+                <div class="details hover-text">
+                    Welcome to HackBits, your ultimate portal for acing technical interviews! At HackBits, we're dedicated to empowering CS students with the knowledge and skills needed to navigate the challenging landscape of software engineering interviews- one bit at a time!
                 </div>
             </div>
             <div class="card">
                 <p class="week-schedule">systemSprint</p>
-                <img src="./assets/img/syllabus/1.png"/>
+                <img src="./assets/img/syllabus/systemSprint.png"/>
                 <div class="details">
-                    <ul>
-                        <li>Learning Git & GitHub</li>
-                        <li>Setting up GitHub Account</li>
-                        <li>Making your first commit</li>
-                    </ul>
+                    From Blueprint to Breakthrough: Craft, Collaborate, Create.
+                </div>
+                <div class="details hover-text">
+                    Embark on a journey through the lifecycle of software engineering in our systemSprint sessions. It's not just a meeting; it's a transformative experience that offers a panoramic view of a software engineer's world. Gain insights into the essentials of system design, where theory meets practice, and ideas transform into concrete strategies.
                 </div>
             </div>
             <div class="card">
                 <p class="week-schedule">storyCraft</p>
                 <img src="./assets/img/syllabus/2.png"/>
                 <div class="details">
-                    <ul>
-                        <li>Introduction to Git Branches</li>
-                        <li>Creating your first Pull Request</li>
-                    </ul>
+                    Craft your Narrative, Guarantee your success: Ace Behavioral Interviews with confidence and strategy!
+                </div>
+                <div class="details hover-text">
+                    Welcome to our Behavioral Interview Mastery Sessions, where your journey to interview excellence begins. In our tailored sessions, we delve into the art of acing behavioral interviews. Our comprehensive approach includes interactive workshops, insider tips and tricks, and real-time mock interviews using mock resumes.
                 </div>
             </div>
             <div class="card">
                 <p class="week-schedule">netNight</p>
-                <img src="./assets/img/syllabus/3.png" />
+                <img src="./assets/img/syllabus/netNight.png" />
                 <div class="details">
-                    <ul>
-                        <li>Advanced Git Commands</li>
-                        <li>Developing your first Github Action</li>
-                    </ul>
+                    Connect, Converse, Conquer: Master the Art of Networking with NetNight.
+                </div>
+                <div class="details hover-text">
+                    Step into the world of netNight, your gateway to mastering the art of networking in the tech industry. Our sessions are meticulously crafted to arm you with the key strategies needed to build impactful relationships in the tech sphere. We bring to you the inspiring stories of alumni who have navigated their career paths deftly, leveraging networking to secure coveted jobs. Unlock the secrets of effective networking with guidance from those who've navigated the path before you.
                 </div>
             </div>
             <div class="card">
                 <p class="week-schedule">techHour</p>
-                <img src="./assets/img/syllabus/4.png" />
+                <img src="./assets/img/syllabus/techHour.png" />
                 <div class="details">
-                    <ul>
-                        <li>Stay tuned for more details!</li>
-                    </ul>
+                    Discuss, debate and Dive into the latest tech trends, and shape the future.
+                </div>
+                <div class="details hover-text">
+                    Step into the realm of innovation at Tech Hour, where curiosity meets the cutting edge of technology. It's not just an event; it's a vibrant forum for tech enthusiasts to unravel the mysteries of up-and-coming tools like Blockchain, ChatGPT, and LLM pipelines. Here, we don't just follow trends – we forecast them.
                 </div>
             </div>
         </div>
         <script>
-            $(".carousel").owlCarousel({
+            var owl = $('.owl-carousel');
+            owl.owlCarousel({
                 margin: 10,
-                // loop: true,
                 autoplay: true,
                 autoplayTimeout: 3000,
                 autoplayHoverPause: true,
@@ -329,51 +329,6 @@
     </div>
     <!-- END Apply Section -->
 
-    <!-- BEGIN LAB SUGGESTION SECTION -->
-    <!-- <div id="lab-suggestion" class="section">
-        <div class="section-header row justify-content-center align-items-center text-center">Got an idea?</div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-10 mx-auto">
-                    <p class="lead" style="text-align: center; margin-bottom: 25px">
-                        Have a great concept for an app that you've always wanted to develop but are unsure where to begin? Our developers can assist you in making your vision
-                        a reality. Post your idea below and we'll get back to you. Your concept is your own; we were not inspired by Mark :)
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="form-container">
-            <form id="labSuggestionForm">
-                <div class="row">
-                    <div class="col-md mb-3">
-                        <label for="labSuggestionFirstName" class="form-label">First Name <span style="color: red">*</span></label>
-                        <input required type="text" class="form-control" id="labSuggestionFirstName" placeholder="J." />
-                    </div>
-                    <div class="col-md mb-3">
-                        <label for="labSuggestionLastName" class="form-label">Last Name <span style="color: red">*</span></label>
-                        <input required type="text" class="form-control" id="labSuggestionLastName" placeholder="Doe" />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md mb-3">
-                        <label for="labSuggestionEmail" class="form-label">Email <span style="color: red">*</span></label>
-                        <input required type="email" class="form-control" id="labSuggestionEmail" placeholder="jdoe@example.com" aria-describedby="emailHelp" />
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="labSuggestionQuestion" class="form-label">What is your idea? <span style="color: red">*</span></label>
-                    <textarea required class="form-control" id="labSuggestionQuestion" placeholder="How about an app that ..."></textarea>
-                </div>
-                <div class="container text-center">
-                    <button type="submit" class="btn btn-danger m-1">Submit</button>
-                    <button type="reset" class="btn btn-danger m-1">Reset</button>
-                </div>
-            </form>
-        </div>
-    </div> -->
-    <!-- END LAB SUGGESTION SECTION -->
-
-
     <!-- BEGIN Team Section -->
     <div id="team" class="section">
         <div class="section-header row justify-content-center align-items-center text-center">Our Team</div>
@@ -425,6 +380,50 @@
         </div>
     </div>
     <!-- END Team Section -->
+
+    <!-- BEGIN LAB SUGGESTION SECTION -->
+    <div id="lab-suggestion" class="section">
+        <div class="section-header row justify-content-center align-items-center text-center">Feedback</div>
+        <!-- <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-10 mx-auto">
+                    <p class="lead" style="text-align: center; margin-bottom: 25px">
+                        Have a great concept for an app that you've always wanted to develop but are unsure where to begin? Our developers can assist you in making your vision
+                        a reality. Post your idea below and we'll get back to you. Your concept is your own; we were not inspired by Mark :)
+                    </p>
+                </div>
+            </div>
+        </div> -->
+        <div class="form-container">
+            <form id="labSuggestionForm">
+                <div class="row">
+                    <div class="col-md mb-3">
+                        <label for="labSuggestionFirstName" class="form-label">First Name <span style="color: red">*</span></label>
+                        <input required type="text" class="form-control" id="labSuggestionFirstName" placeholder="J." />
+                    </div>
+                    <div class="col-md mb-3">
+                        <label for="labSuggestionLastName" class="form-label">Last Name <span style="color: red">*</span></label>
+                        <input required type="text" class="form-control" id="labSuggestionLastName" placeholder="Doe" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md mb-3">
+                        <label for="labSuggestionEmail" class="form-label">Email <span style="color: red">*</span></label>
+                        <input required type="email" class="form-control" id="labSuggestionEmail" placeholder="jdoe@example.com" aria-describedby="emailHelp" />
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="labSuggestionQuestion" class="form-label">Message <span style="color: red">*</span></label>
+                    <textarea required class="form-control" id="labSuggestionQuestion"></textarea>
+                </div>
+                <div class="container text-center">
+                    <button type="submit" class="btn btn-danger m-1">Submit</button>
+                    <button type="reset" class="btn btn-danger m-1">Reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- END LAB SUGGESTION SECTION -->
 
 
     <script src="./assets/js/popper.min.js"></script>
