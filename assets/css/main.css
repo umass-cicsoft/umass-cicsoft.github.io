@@ -81,7 +81,7 @@ body {
     display: flex;
     padding-top: 0.5rem;
     padding-bottom: -0.5rem;
-    margin: 1.5rem;
+    margin: 0;
     color: white;
     font-size: 3rem;
     border-radius: 1.5em;
@@ -396,7 +396,7 @@ body {
 .card:hover .hover-text {
     display: block;
 }
-/* .card:hover .card-img, */
+.card:hover .card-img,
 .card:hover .non-hover-text {
     display: none;
 }

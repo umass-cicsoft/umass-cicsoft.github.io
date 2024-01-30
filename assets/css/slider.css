@@ -10,7 +10,7 @@
 
 #syllabus .card {
     display: flex;
-    min-height: 600px;
+    min-height: 550px;
     width: auto;
     background-color: #211d1e;
     border-radius: 10px;
