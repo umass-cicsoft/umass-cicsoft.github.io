@@ -158,6 +158,21 @@ body {
     }
 }
 
+.highlight {
+    display: inline-block;
+    color: #551111;
+    -webkit-text-stroke: 1px #8c52ff
+;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.timing {
+    position: absolute;
+    bottom: 20px;
+    color: white;
+}
+
 #about {
     color: white;
     background-color: #881c1c;
