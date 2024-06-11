@@ -52,19 +52,13 @@ body {
 
 .social-media-overlay {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    position: fixed;
-    z-index: 2;
-    right: 1.5em;
-    bottom: 1.5em;
-    background-color: rgba(255, 255, 255, 0.75);
-    border-radius: 1.5em;
-    box-shadow: 3px 3px rgba(136, 28, 28, 0.75);
 }
 
 .social-media-overlay img {
     margin: 0.75em;
+    width: 25px;
 }
 
 .section {
@@ -388,6 +382,7 @@ body {
 .team-social-icon {
     width: 1.5rem;
     height: auto;
+    margin-right: 5px;
 }
 
 .card-img-top {
