@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Sagnik Pal",
+        "role": "Core Member",
+        "graduating": "Spring 2026",
+        "bio": null,
+        "membership": {
+            "active_member": true,
+            "member_since": "Spring 2024",
+            "member_until": null
+        },
+        "socials": {
+            "linkedin": "sagnikpal2004",
+            "github": "sagnikpal2004",
+            "website": null
+        }
+    },
+    {
+        
+    },
+    {
+
+    },
+    {
+
+    },
+    {
+
+    },
+    {
+
+    },
+    {
+        "name": null,
+        "role": "President",
+        "active_member": false,
+        "bio": null,
+        "member_since": null,
+        "graduating": null,
+        "linkedin": null,
+        "github": null,
+        "website": null
+    }
+]
