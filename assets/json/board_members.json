@@ -1,6 +1,24 @@
 [
     {
+        "name": "Shiven Patel",
+        "img": "./assets/img/team/jpg/shiven_patel.jpg",
+        "role": "President",
+        "graduating": "Spring 2026",
+        "bio": null,
+        "membership": {
+            "active_member": true,
+            "member_since": null,
+            "member_until": null
+        },
+        "socials": {
+            "linkedin": "sp1105/",
+            "github": "Shiven110504",
+            "website": null
+        }
+    },
+    {
         "name": "Sagnik Pal",
+        "img": "./assets/img/team/jpg/sagnik_pal.jpg",
         "role": "Core Member",
         "graduating": "Spring 2026",
         "bio": null,
@@ -16,29 +34,74 @@
         }
     },
     {
+        "name": "Ayushman Satpathy",
+        "img": "./assets/img/team/jpg/Ayushman.jpg",
+        "role": "Core Member",
+        "graduating": "Spring 2026",
+        "bio": null,
+        "membership": {
+            "active_member": true,
+            "member_since": "Spring 2024",
+            "member_until": null
+        },
+        "socials": {
+            "linkedin": "ayushmansatpathy",
+            "github": "null",
+            "website": null
+        }
+    },
+    {
+        "name": "Stella Dey",
+        "img": null,
+        "role": "Core Member",
+        "graduating": "Spring 2027",
+        "bio": null,
+        "membership": {
+            "active_member": true,
+            "member_since": "Fall 2024",
+            "member_until": null
+        },
+        "socials": {
+            "linkedin": "stella-dey-69b040130",
+            "github": "Celaena24",
+            "website": null
+        }
         
     },
     {
-
-    },
-    {
-
-    },
-    {
-
-    },
-    {
-
-    },
-    {
-        "name": null,
-        "role": "President",
-        "active_member": false,
+        "name": "Naina Singh",
+        "img": null,
+        "role": "Core Member",
+        "graduating": "Spring 2027",
         "bio": null,
-        "member_since": null,
-        "graduating": null,
-        "linkedin": null,
-        "github": null,
-        "website": null
+        "membership": {
+            "active_member": true,
+            "member_since": "Fall 2024",
+            "member_until": null
+        },
+        "socials": {
+            "linkedin": null,
+            "github": null,
+            "website": null
+        }
+        
+    },
+    {
+        "name": "Jacqueline Bradley",
+        "img": null,
+        "role": "Core Member",
+        "graduating": "Spring 2027",
+        "bio": null,
+        "membership": {
+            "active_member": true,
+            "member_since": "Fall 2024",
+            "member_until": null
+        },
+        "socials": {
+            "linkedin": null,
+            "github": null,
+            "website": null
+        }
+        
     }
 ]
