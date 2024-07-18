@@ -31,14 +31,19 @@
 
     },
     {
-        "name": null,
+        "name": "Shiven Patel",
         "role": "President",
-        "active_member": false,
+        "graduating": "Spring 2026",
         "bio": null,
-        "member_since": null,
-        "graduating": null,
-        "linkedin": null,
-        "github": null,
-        "website": null
+        "membership": {
+            "active_member": true,
+            "member_since": "Fall 2022",
+            "member_until": null
+        },
+        "socials": {
+            "linkedin": "sp1105",
+            "github": "Shiven110504",
+            "website": "https://www.shivenpatel.me"
+        }
     }
 ]
