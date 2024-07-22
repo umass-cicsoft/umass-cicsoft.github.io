@@ -21,7 +21,7 @@
         "img": "./assets/img/team/jpg/sagnik_pal.jpg",
         "role": "Core Member",
         "graduating": "Spring 2026",
-        "bio": null,
+        "bio": "Beware! Cosmic rays cause bitflips ✨",
         "membership": {
             "active_member": true,
             "member_since": "Spring 2024",
@@ -30,7 +30,7 @@
         "socials": {
             "linkedin": "sagnikpal2004",
             "github": "sagnikpal2004",
-            "website": null
+            "website": "https://www-edlab.cs.umass.edu/~sagnikpal"
         }
     },
     {
