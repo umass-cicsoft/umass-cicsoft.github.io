@@ -133,9 +133,9 @@ $("#applyForm").submit((event) => {
 $('#labSuggestionForm').submit((event) => {
     event.preventDefault();
     let suggestionData = {
-        first_name: $("#labSuggestionFirstName").val(), // REQUIRED
-        last_name: $("#labSuggestionLastName").val(), // REQUIRED
-        email: $("#labSuggestionEmail").val(), // REQUIRED
+        first_name: "Anonymous", // REQUIRED
+        last_name: "Anonymous", // REQUIRED
+        email: "Anonymous", // REQUIRED
         idea_text: $("#labSuggestionQuestion").val() // REQUIRED
     }
     let requestHeaders = new Headers();
