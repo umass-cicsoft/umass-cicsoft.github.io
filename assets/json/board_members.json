@@ -52,7 +52,7 @@
     },
     {
         "name": "Stella Dey",
-        "img": null,
+        "img": "./assets/img/team/jpg/stella_dey.jpg",
         "role": "Core Member",
         "graduating": "Spring 2027",
         "bio": null,
