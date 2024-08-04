@@ -230,11 +230,10 @@
                         <label for="applyGraduationYear" class="form-label">Graduation Year <span style="color: red">*</span></label>
                         <select required class="form-select" id="applyGraduationYear" aria-label="Graduation Year Selection">
                             <option disabled value="" selected>Select your graduation year</option>
-                            <option value="2023">2023</option>
-                            <option value="2024">2024</option>
                             <option value="2025">2025</option>
                             <option value="2026">2026</option>
                             <option value="2027">2027</option>
+                            <option value="2028">2028</option>
                         </select>
                     </div>
                 </div>
@@ -285,10 +284,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="mb-3">
+                <!-- <div class="mb-3">
                     <label for="applyQuestion" class="form-label">Why are you interested in joining CICSoft? <span style="color: red">*</span></label>
                     <textarea required class="form-control" id="applyQuestion" placeholder="I want to learn more about ..."></textarea>
-                </div>
+                </div> -->
                 <div class="mb-3">
                     <label for="applyReferral" class="form-label">How did you hear about us? <span style="color: red">*</span></label>
                     <div class="row">
@@ -336,8 +335,8 @@
     <!-- BEGIN Team Section -->
     <div id="team" class="section">
         <div class="section-header row justify-content-center align-items-center text-center">Our Team</div>
-        <div class="row justify-content-center align-items-center text-center w-75">
-            <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 21rem">
+        <div class="row justify-content-center align-items-center text-center w-75 team-members">
+            <!-- <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 21rem">
                 <picture>
                     <source srcset="./assets/img/team/webp/shiven_patel.webp" type="image/webp" />
                     <img src="./assets/img/team/jpg/shiven_patel.jpg" class="card-img-top rounded-circle" alt="Shiven Patel" />
@@ -369,7 +368,7 @@
                     <h5 class="card-text">Core Member</h5>
                     <a href="https://www.linkedin.com/in/ayushmansatpathy/" target="_blank"><img class="team-social-icon" src="./assets/svg/LinkedIn.svg" alt="LinkedIn" /></a>
                 </div>
-            </div>
+            </div> -->
             <!-- <div class="card text-white bg-transparent border-0 m-2 p-3 rounded-3" style="width: 21rem">
                 <picture>
                     <img src="./assets/img/team/jpg/trung_dang.jpeg" class="card-img-top rounded-circle" alt="Trung Dang" />
@@ -399,7 +398,7 @@
         </div> -->
         <div class="form-container">
             <form id="labSuggestionForm">
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-md mb-3">
                         <label for="labSuggestionFirstName" class="form-label">First Name <span style="color: red">*</span></label>
                         <input required type="text" class="form-control" id="labSuggestionFirstName" placeholder="J." />
@@ -414,9 +413,9 @@
                         <label for="labSuggestionEmail" class="form-label">Email <span style="color: red">*</span></label>
                         <input required type="email" class="form-control" id="labSuggestionEmail" placeholder="jdoe@example.com" aria-describedby="emailHelp" />
                     </div>
-                </div>
+                </div> -->
                 <div class="mb-3">
-                    <label for="labSuggestionQuestion" class="form-label">What do you think about ouor Club? <span style="color: red">*</span></label>
+                    <label for="labSuggestionQuestion" class="form-label">What do you think about our Club? <span style="color: red">*</span></label>
                     <textarea required class="form-control" id="labSuggestionQuestion"></textarea>
                 </div>
                 <div class="container text-center">
@@ -434,6 +433,7 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="./assets/js/bootstrap.min.js"></script>
     <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/display_members.js"></script>
 </body>
 
 </html>

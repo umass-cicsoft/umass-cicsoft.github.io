@@ -1,0 +1,107 @@
+[
+    {
+        "name": "Shiven Patel",
+        "img": "./assets/img/team/jpg/shiven_patel.jpg",
+        "role": "President",
+        "graduating": "Spring 2026",
+        "bio": null,
+        "membership": {
+            "active_member": true,
+            "member_since": null,
+            "member_until": null
+        },
+        "socials": {
+            "linkedin": "sp1105/",
+            "github": "Shiven110504",
+            "website": "https://www.shivenpatel.me"
+        }
+    },
+    {
+        "name": "Sagnik Pal",
+        "img": "./assets/img/team/jpg/sagnik_pal.jpg",
+        "role": "Core Member",
+        "graduating": "Spring 2026",
+        "bio": "Beware! Cosmic rays cause bitflips ✨",
+        "membership": {
+            "active_member": true,
+            "member_since": "Spring 2024",
+            "member_until": null
+        },
+        "socials": {
+            "linkedin": "sagnikpal2004",
+            "github": "sagnikpal2004",
+            "website": "https://www-edlab.cs.umass.edu/~sagnikpal"
+        }
+    },
+    {
+        "name": "Ayushman Satpathy",
+        "img": "./assets/img/team/jpg/Ayushman.jpg",
+        "role": "Core Member",
+        "graduating": "Spring 2026",
+        "bio": null,
+        "membership": {
+            "active_member": true,
+            "member_since": "Spring 2024",
+            "member_until": null
+        },
+        "socials": {
+            "linkedin": "ayushmansatpathy",
+            "github": "null",
+            "website": null
+        }
+    },
+    {
+        "name": "Stella Dey",
+        "img": "./assets/img/team/jpg/stella_dey.jpg",
+        "role": "Core Member",
+        "graduating": "Spring 2027",
+        "bio": null,
+        "membership": {
+            "active_member": true,
+            "member_since": "Fall 2024",
+            "member_until": null
+        },
+        "socials": {
+            "linkedin": "stella-dey-69b040130",
+            "github": "Celaena24",
+            "website": null
+        }
+        
+    },
+    {
+        "name": "Naina Singh",
+        "img": "./assets/img/team/jpg/naina_singh.png",
+        "role": "Core Member",
+        "graduating": "Spring 2027",
+        "bio": "Let's connect to explore our shared interests together! 🚀",
+        "membership": {
+            "active_member": true,
+            "member_since": "Fall 2024",
+            "member_until": null
+        },
+        "socials": {
+            "linkedin": "nainaaz",
+            "github": "nainaaz",
+            "website": null
+        }
+        
+    },
+    {
+        "name": "Jacqueline Bradley",
+        "img": "./assets/img/team/jpg/Jacqueline_Bradley.jpeg",
+        "role": "Core Member",
+        "graduating": "Spring 2027",
+        "bio": null,
+        "membership": {
+            "active_member": true,
+            "member_since": "Fall 2024",
+            "member_until": null
+        },
+        "socials": {
+            "linkedin": null,
+            "github": null,
+            "website": null
+        }
+        
+    }
+]
