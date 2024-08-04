@@ -94,8 +94,8 @@ $("#applyForm").submit((event) => {
     })
     applyFormData["github_link"] = `https://github.com/${$("#applyGitHub").val()}`;
     applyFormData["linkedin_link"] = `https://linkedin.com/in/${$("#applyLinkedIn").val()}`;
-    applyFormData["interest_response"] = $("#applyQuestion").val();
-    applyFormData["referral_response"] = $("[name='applyReferral']:checked").val();
+    // applyFormData["interest_response"] = $("#applyQuestion").val();
+    // applyFormData["referral_response"] = $("[name='applyReferral']:checked").val();
 
     let requestHeaders = new Headers();
     requestHeaders.append("Content-Type", "application/json");
@@ -120,7 +120,7 @@ $("#applyForm").submit((event) => {
                 $("#applyForm").trigger("reset");
             } else {
                 $("#registerToast").addClass("bg-danger");
-                $("#registerToastText").text("Something went wrong! Try again later.");
+                $("#registerToastText").text(`Something went wrong! ${result["message"]} Try again later.`);
             }
             $("#registerToast").toast("show");
         })
