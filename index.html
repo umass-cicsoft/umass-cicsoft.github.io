@@ -70,6 +70,15 @@
     </div>
     <!-- END Navigation Bar -->
 
+    <!-- BEGIN Loader -->
+    <div id="loading-spinner">
+        <div class="spinner-border text-danger" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    <!-- END Loader -->
+
+
     <!-- BEGIN Home Section -->
     <div id="home" class="section">
         <div class="home-container">
@@ -91,21 +100,13 @@
     
     <!-- END Home Section -->
 
-    <!-- BEGIN Loader -->
-    <div id="loading-spinner">
-        <div class="spinner-border text-danger" role="status">
-            <span class="visually-hidden">Loading...</span>
-        </div>
-    </div>
-    <!-- END Loader -->
-
     <!-- BEGIN About Section -->
     <div id="about" class="section" style="font-family: Lexend">
         <div class="section-header row justify-content-center align-items-center text-center p-3">About Us</div>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-10 mx-auto">
-                    <p class="lead" style="text-align: justify">
+                    <p class="lead text-center text-lg-justify">
                         CICSoft is a dynamic hub uniting computer science academia with industry demands. In our collaborative environment, members enhance technical skills through engaging sessions, seamlessly blending theory with hands-on applications. Embracing innovation and inclusivity, we prepare members for success in the fast-paced tech sector. Join us in bridging the gap between academia and industry, where education meets empowerment in the realm of computer science and application development.
                     </p>
                 </div>
@@ -178,19 +179,21 @@
                 autoplay: true,
                 autoplayTimeout: 3000,
                 autoplayHoverPause: true,
-                items: 3,
                 nav: true,
                 mouseDrag: true,
-                stagePadding: 100,
                 responsive: {
                     0: {
                         items: 1,
+                        stagePadding: 30,
+                        nav: false,
                     },
-                    600: {
+                    768: {
                         items: 2,
+                        stagePadding: 100,
                     },
                     1000: {
                         items: 3,
+                        stagePadding: 200,
                     },
                 },
             });

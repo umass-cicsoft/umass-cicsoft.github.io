@@ -74,12 +74,8 @@ body {
 
 .section-header {
     display: flex;
-    padding-top: 0.5rem;
-    padding-bottom: -0.5rem;
-    margin: 0;
     color: white;
     font-size: 3rem;
-    border-radius: 1.5em;
     font-family: "Lexend";
 }
 
@@ -200,25 +196,6 @@ body {
     background-attachment: fixed;
     background-size: cover;
     color: white;
-}
-
-.owl-carousel .owl-nav .owl-prev,
-.owl-carousel .owl-nav .owl-next {
-    position: absolute;
-    top: 50%;
-    background: #869791;
-    color: #fff;
-    font-size: 50px !important;
-    margin: 0px;
-    cursor: pointer;
-}
-
-.owl-carousel .owl-nav .owl-prev {
-    left: 0px;
-}
-
-.owl-carousel .owl-nav .owl-next {
-    right: 0px;
 }
 
 #apply {
@@ -415,4 +392,10 @@ body {
 
 #team .card:hover {
     background-color: #110f0f !important;
+}
+
+@media (min-width: 768px) {
+    .text-lg-justify {
+        text-align: justify !important;
+    }
 }
