@@ -383,8 +383,33 @@ body {
 }
 
 @media (max-width: 480px) {
+    
+}
+
+@media (max-width: 480px) {
     .form-container {
         margin: 0;
         max-width: 95vw;
+    }
+
+    .input-group .input-group-text,
+    .input-group .form-control {
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+
+    .input-group .form-control {
+        margin-left: 0 !important;
+        border-bottom-left-radius: 0.25rem !important;
+        border-bottom-right-radius: 0.25rem !important;
+        border-top-left-radius: 0 !important;
+        border-top-right-radius: 0 !important;
+    }
+    .input-group .input-group-text {
+        border-bottom-left-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+        border-top-left-radius: 0.25rem !important;
+        border-top-right-radius: 0.25rem !important;
     }
 }
