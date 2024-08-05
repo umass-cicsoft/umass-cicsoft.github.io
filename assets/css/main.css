@@ -77,6 +77,8 @@ body {
     color: white;
     font-size: 3rem;
     font-family: "Lexend";
+    padding: 0.5em;
+    margin: 0;
 }
 
 #loading-spinner {
@@ -206,16 +208,6 @@ body {
     color: white;
 }
 
-#apply .form-container {
-    color: white;
-    background-color: #211d1e;
-    min-width: 70vw;
-    max-width: 90vw;
-    padding: 2rem;
-    margin: 0rem 2rem;
-    border-radius: 0.5rem;
-}
-
 #applyQuestion {
     height: 8em;
     resize: none;
@@ -227,16 +219,6 @@ body {
     background-attachment: fixed;
     background-size: cover;
     color: white;
-}
-
-#join-us .form-container {
-    color: white;
-    background-color: #211d1e;
-    min-width: 70vw;
-    max-width: 90vw;
-    padding: 2rem;
-    margin: 0rem 2rem;
-    border-radius: 0.5rem;
 }
 
 #joinQuestion1 {
@@ -255,16 +237,6 @@ body {
     background-attachment: fixed;
     background-size: cover;
     color: white;
-}
-
-#lab-suggestion .form-container {
-    color: white;
-    background-color: #211d1e;
-    min-width: 70vw;
-    max-width: 90vw;
-    padding: 2rem;
-    margin: 0rem 2rem;
-    border-radius: 0.5rem;
 }
 
 #labSuggestionQuestion {
@@ -397,5 +369,22 @@ body {
 @media (min-width: 768px) {
     .text-lg-justify {
         text-align: justify !important;
+    }
+}
+
+.form-container {
+    color: white;
+    background-color: #211d1e;
+    min-width: 70vw;
+    max-width: 90vw;
+    padding: 2rem;
+    margin: 0rem 2rem;
+    border-radius: 0.5rem;
+}
+
+@media (max-width: 480px) {
+    .form-container {
+        margin: 0;
+        max-width: 95vw;
     }
 }
