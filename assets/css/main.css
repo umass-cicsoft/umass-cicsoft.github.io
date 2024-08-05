@@ -62,6 +62,7 @@ body {
 }
 
 .section {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -117,6 +118,7 @@ body {
 #home {
     padding-top: 3.5em;
     min-height: 100vh;
+    height: 500px;
 }
 
 .home-container {
