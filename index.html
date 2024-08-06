@@ -70,26 +70,6 @@
     </div>
     <!-- END Navigation Bar -->
 
-    <!-- BEGIN Home Section -->
-    <div id="home" class="section">
-        <div class="home-container">
-            <div id="home-header"><img src="./assets/img/navbarLogo.png" alt="CICSoft" /></div>
-            <h4 id="home-subheader" class="text-white">
-                We aim to serve as a vital bridge, fostering a seamless connection between the CS university
-                experience and the dynamic demands of the industry.
-            </h4>
-        </div>
-        <div class="timing lead justify-content-center align-items-center text-center p-3"> 
-            Coming back soon for <span class="highlight">Fall 2024</span>
-        </div>
-        <div class="social-media-overlay">
-            <a href="https://www.instagram.com/cicsoft/" target="_blank"><img src="./assets/svg/Instagram.svg" alt="Instagram" /></a>
-            <a href="https://discord.gg/Ja9guat77q" target="_blank"><img src="./assets/svg/Discord.svg" alt="Discord" /></a>
-            <a href="mailto:cicsoft@cs.umass.edu" target="_blank"><img src="./assets/svg/Gmail.svg" alt="Gmail" /></a>
-        </div>
-    </div>
-    <!-- END Home Section -->
-
     <!-- BEGIN Loader -->
     <div id="loading-spinner">
         <div class="spinner-border text-danger" role="status">
@@ -98,13 +78,35 @@
     </div>
     <!-- END Loader -->
 
+
+    <!-- BEGIN Home Section -->
+    <div id="home" class="section">
+        <div class="home-container">
+            <div id="home-header"><img src="./assets/img/navbarLogo.png" alt="CICSoft" /></div>
+            <h4 id="home-subheader" class="text-white">
+                We aim to serve as a vital bridge, fostering a seamless connection between the CS university
+                experience and the dynamic demands of the industry.
+            </h4>
+            <div class="social-media-overlay">
+                <a href="https://www.instagram.com/cicsoft/" target="_blank"><img src="./assets/svg/Instagram.svg" alt="Instagram" /></a>
+                <a href="https://discord.gg/Ja9guat77q" target="_blank"><img src="./assets/svg/Discord.svg" alt="Discord" /></a>
+                <a href="mailto:cicsoft@cs.umass.edu" target="_blank"><img src="./assets/svg/Gmail.svg" alt="Gmail" /></a>
+            </div>
+        </div>
+        <div class="timing lead justify-content-center align-items-center text-center p-3"> 
+            Coming back soon for <span class="highlight">Fall 2024</span>
+        </div>
+    </div>
+    
+    <!-- END Home Section -->
+
     <!-- BEGIN About Section -->
     <div id="about" class="section" style="font-family: Lexend">
         <div class="section-header row justify-content-center align-items-center text-center p-3">About Us</div>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-10 mx-auto">
-                    <p class="lead" style="text-align: justify">
+                    <p class="lead text-center text-lg-justify">
                         CICSoft is a dynamic hub uniting computer science academia with industry demands. In our collaborative environment, members enhance technical skills through engaging sessions, seamlessly blending theory with hands-on applications. Embracing innovation and inclusivity, we prepare members for success in the fast-paced tech sector. Join us in bridging the gap between academia and industry, where education meets empowerment in the realm of computer science and application development.
                     </p>
                 </div>
@@ -117,7 +119,7 @@
     <!-- BEGIN Syllabus Section -->
     <div id="syllabus" class="section">
         <div class="section-header row justify-content-center align-items-center text-center">Learning Tracks</div>
-        <div class="carousel owl-carousel">
+        <div class="carousel-container"><div class="carousel owl-carousel">
             <div class="card">
                 <p class="week-schedule">netNight</p>
                 <img class="card-img" src="./assets/img/syllabus/netNight.png" />
@@ -169,31 +171,8 @@
                     Embark on a journey through the lifecycle of software engineering in our systemSprint sessions. It's not just a meeting; it's a transformative experience that offers a panoramic view of a software engineer's world. Gain insights into the essentials of system design, where theory meets practice, and ideas transform into concrete strategies.
                 </div>
             </div>
-        </div>
-        <script>
-            var owl = $('.owl-carousel');
-            owl.owlCarousel({
-                margin: 10,
-                autoplay: true,
-                autoplayTimeout: 3000,
-                autoplayHoverPause: true,
-                items: 3,
-                nav: true,
-                mouseDrag: true,
-                stagePadding: 100,
-                responsive: {
-                    0: {
-                        items: 1,
-                    },
-                    600: {
-                        items: 2,
-                    },
-                    1000: {
-                        items: 3,
-                    },
-                },
-            });
-        </script>
+        </div></div>
+        <script src="./assets/js/slider.js"></script>
     </div>
     <!-- END Syllabus Section -->
 
@@ -415,7 +394,7 @@
                     </div>
                 </div> -->
                 <div class="mb-3">
-                    <label for="labSuggestionQuestion" class="form-label">What do you think about our Club? <span style="color: red">*</span></label>
+                    <label for="labSuggestionQuestion" class="form-label">What do you think about our Club?<span style="color: red">*</span></label>
                     <textarea required class="form-control" id="labSuggestionQuestion"></textarea>
                 </div>
                 <div class="container text-center">
