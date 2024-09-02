@@ -70,7 +70,6 @@ function sendToSender(data) {
         "Accept": "application/json",
     };
 
-    console.log('Sending data to Sender:', data);
 
     fetch(url, {
         method: "POST",
@@ -136,7 +135,6 @@ $("#applyForm").submit((event) => {
     })
     .then(response => response.json())
     .then(result => {
-        console.log('API response:', result);
         $("#registerToast").removeClass("bg-warning bg-success bg-danger");
         if (result["message"] === "Member registered successfully") {
             $("#registerToast").addClass("bg-success");
