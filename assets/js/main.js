@@ -61,7 +61,7 @@ $(window).scroll(displayNavLogo);
 
 // Function to send data to Sender
 function sendToSender(data) {
-    const TOKEN = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYmMwNTUyNDJhYmNkZTdkMjUyMDM2M2JlYzE3YjQzY2E4YTQ1OWRhNzQyMThiZDA2ZjU5NzkxOGVkMzUyZDI2MTM0YTQwODM4NjYxMWUyNjUiLCJpYXQiOiIxNzI1MzA1MjM5LjEzNjkyNiIsIm5iZiI6IjE3MjUzMDUyMzkuMTM2OTI5IiwiZXhwIjoiNDg3ODkwNTIzOS4xMzQxOTkiLCJzdWIiOiI3NTIxNjEiLCJzY29wZXMiOltdfQ.kVAitlePYLJvXO5iln-zHFPG9h3IXnru1vN5v_oH-L4DfJyBaU3QZ5903Up_jEnPT75y62XONRtYxmtPVnYdew";
+    const TOKEN = process.env.SECRET_KEY || 'default_value';
     const url = new URL("https://api.sender.net/v2/subscribers");
 
     let headers = {
