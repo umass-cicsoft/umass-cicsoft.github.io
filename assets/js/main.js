@@ -59,7 +59,34 @@ const displayNavLogo = function () {
 $(document).ready(displayNavLogo);
 $(window).scroll(displayNavLogo);
 
-// send apply form data
+// Function to send data to Sender
+function sendToSender(data) {
+    const TOKEN = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYmMwNTUyNDJhYmNkZTdkMjUyMDM2M2JlYzE3YjQzY2E4YTQ1OWRhNzQyMThiZDA2ZjU5NzkxOGVkMzUyZDI2MTM0YTQwODM4NjYxMWUyNjUiLCJpYXQiOiIxNzI1MzA1MjM5LjEzNjkyNiIsIm5iZiI6IjE3MjUzMDUyMzkuMTM2OTI5IiwiZXhwIjoiNDg3ODkwNTIzOS4xMzQxOTkiLCJzdWIiOiI3NTIxNjEiLCJzY29wZXMiOltdfQ.kVAitlePYLJvXO5iln-zHFPG9h3IXnru1vN5v_oH-L4DfJyBaU3QZ5903Up_jEnPT75y62XONRtYxmtPVnYdew";
+    const url = new URL("https://api.sender.net/v2/subscribers");
+
+    let headers = {
+        "Authorization": `Bearer ${TOKEN}`,
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+    };
+
+    console.log('Sending data to Sender:', data);
+
+    fetch(url, {
+        method: "POST",
+        headers: headers,
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(result => {
+        console.log('Success:', result);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+
+// Modify the existing form submission handler to include sending data to Sender
 $("#applyForm").submit((event) => {
     event.preventDefault();
     let applyFormData = {
@@ -107,27 +134,39 @@ $("#applyForm").submit((event) => {
         body: JSON.stringify(applyFormData),
         headers: requestHeaders,
     })
-        .then(response => response.json())
-        .then(result => {
-            $("#registerToast").removeClass("bg-warning bg-success bg-danger");
-            if (result["message"] === "Member registered successfully") {
-                $("#registerToast").addClass("bg-success");
-                $("#registerToastText").text("You have successfully registered!");
-                $("#applyForm").trigger("reset");
-            } else if (result["message"] === "Member already registered") {
-                $("#registerToast").addClass("bg-warning");
-                $("#registerToastText").text("You are already registered with us!");
-                $("#applyForm").trigger("reset");
-            } else {
-                $("#registerToast").addClass("bg-danger");
+    .then(response => response.json())
+    .then(result => {
+        console.log('API response:', result);
+        $("#registerToast").removeClass("bg-warning bg-success bg-danger");
+        if (result["message"] === "Member registered successfully") {
+            $("#registerToast").addClass("bg-success");
+            $("#registerToastText").text("You have successfully registered!");
+            $("#applyForm").trigger("reset");
+        } else if (result["message"] === "Member already registered") {
+            $("#registerToast").addClass("bg-warning");
+            $("#registerToastText").text("You are already registered with us!");
+            $("#applyForm").trigger("reset");
+        } else {
+            $("#registerToast").addClass("bg-danger");
                 $("#registerToastText").text(`Something went wrong! ${result["message"]} Try again later.`);
-            }
-            $("#registerToast").toast("show");
-        })
-        .catch(error => console.log('error', error))
-        .finally(() => {
-            $("#loading-spinner").removeClass('show')
+        }
+        $("#registerToast").toast("show");
+
+        // Send data to Sender
+        sendToSender({
+            email: applyFormData.umass_email,
+            firstname: applyFormData.first_name,
+            lastname: applyFormData.last_name,
+            groups: ["axVjkz"], 
+            trigger_automation: true
         });
+    })
+    .catch(error => {
+        console.log('Error:', error);
+    })
+    .finally(() => {
+            $("#loading-spinner").removeClass('show')
+    });
 });
 
 $('#labSuggestionForm').submit((event) => {
@@ -211,27 +250,27 @@ $("#joinForm").submit((event) => {
         body: JSON.stringify(joinFormData),
         headers: requestHeaders,
     })
-        .then(response => response.json())
-        .then(result => {
-            $("#registerToast").removeClass("bg-warning bg-success bg-danger");
+    .then(response => response.json())
+    .then(result => {
+        $("#registerToast").removeClass("bg-warning bg-success bg-danger");
             if (result["message"] === "Candidate applied successfully") {
-                $("#registerToast").addClass("bg-success");
+            $("#registerToast").addClass("bg-success");
                 $("#registerToastText").text("You have successfully applied!");
                 $("#joinForm").trigger("reset");
             } else if (result["message"] === "Candidate already applied") {
-                $("#registerToast").addClass("bg-warning");
+            $("#registerToast").addClass("bg-warning");
                 $("#registerToastText").text("You have already applied!");
                 $("#joinForm").trigger("reset");
-            } else {
-                $("#registerToast").addClass("bg-danger");
-                $("#registerToastText").text("Something went wrong! Try again later.");
-            }
-            $("#registerToast").toast("show");
+        } else {
+            $("#registerToast").addClass("bg-danger");
+            $("#registerToastText").text("Something went wrong! Try again later.");
+        }
+        $("#registerToast").toast("show");
         })
         .catch(error => console.log('error', error))
-        .finally(() => {
+    .finally(() => {
             $("#loading-spinner").removeClass('show')
-        });
+    });
 });
 
 $('.submit-poll').click((event) => {
