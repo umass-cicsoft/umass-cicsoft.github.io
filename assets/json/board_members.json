@@ -16,23 +16,7 @@
             "website": "https://www.shivenpatel.me"
         }
     },
-    {
-        "name": "Sagnik Pal",
-        "img": "./assets/img/team/jpg/sagnik_pal.jpg",
-        "role": "Core Member",
-        "graduating": "Spring 2026",
-        "bio": "Beware! Cosmic rays cause bitflips ✨",
-        "membership": {
-            "active_member": true,
-            "member_since": "Spring 2024",
-            "member_until": null
-        },
-        "socials": {
-            "linkedin": "sagnikpal2004",
-            "github": "sagnikpal2004",
-            "website": "https://www-edlab.cs.umass.edu/~sagnikpal"
-        }
-    },
+
     {
         "name": "Ayushman Satpathy",
         "img": "./assets/img/team/jpg/Ayushman.jpg",
