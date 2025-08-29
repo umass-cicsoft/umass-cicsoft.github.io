@@ -3,7 +3,6 @@
         "name": "Shiven Patel",
         "img": "./assets/img/team/jpg/shiven_patel.jpg",
         "role": "President",
-        "graduating": "Spring 2026",
         "bio": null,
         "membership": {
             "active_member": true,
@@ -16,29 +15,10 @@
             "website": "https://www.shivenpatel.me"
         }
     },
-
-    {
-        "name": "Ayushman Satpathy",
-        "img": "./assets/img/team/jpg/Ayushman.jpg",
-        "role": "Core Member",
-        "graduating": "Spring 2026",
-        "bio": null,
-        "membership": {
-            "active_member": true,
-            "member_since": "Spring 2024",
-            "member_until": null
-        },
-        "socials": {
-            "linkedin": "ayushmansatpathy",
-            "github": "null",
-            "website": null
-        }
-    },
     {
         "name": "Stella Dey",
         "img": "./assets/img/team/jpg/stella_dey.jpg",
         "role": "Core Member",
-        "graduating": "Spring 2027",
         "bio": null,
         "membership": {
             "active_member": true,
@@ -56,7 +36,6 @@
         "name": "Naina Singh",
         "img": "./assets/img/team/jpg/naina_singh.png",
         "role": "Core Member",
-        "graduating": "Spring 2027",
         "bio": "Let's connect to explore our shared interests together! 🚀",
         "membership": {
             "active_member": true,
@@ -71,19 +50,35 @@
         
     },
     {
-        "name": "Jacqueline Bradley",
-        "img": "./assets/img/team/jpg/Jacqueline_Bradley.jpeg",
+        "name": "Aryaman Goenka",
+        "img": "./assets/img/team/jpg/default.jpg",
         "role": "Core Member",
-        "graduating": "Spring 2027",
-        "bio": null,
+        "bio": "Let's connect to explore our shared interests together! 🚀",
         "membership": {
             "active_member": true,
             "member_since": "Fall 2024",
             "member_until": null
         },
         "socials": {
-            "linkedin": null,
-            "github": null,
+            "linkedin": "aryaman-goenka/",
+            "github": "umass-cicsoft",
+            "website": null
+        }
+        
+    },
+    {
+        "name": "Vidhaan Kothari",
+        "img": "./assets/img/team/jpg/default.jpg",
+        "role": "Core Member",
+        "bio": "Let's connect to explore our shared interests together! 🚀",
+        "membership": {
+            "active_member": true,
+            "member_since": "Fall 2024",
+            "member_until": null
+        },
+        "socials": {
+            "linkedin": "vidhaan-kothari",
+            "github": "umass-cicsoft",
             "website": null
         }
         
