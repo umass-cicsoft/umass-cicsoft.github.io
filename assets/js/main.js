@@ -71,7 +71,7 @@ function sendToSender(data) {
     };
 
 
-    fetch(url, {
+    return fetch(url, {
         method: "POST",
         headers: headers,
         body: JSON.stringify(data)
@@ -79,9 +79,11 @@ function sendToSender(data) {
     .then(response => response.json())
     .then(result => {
         console.log('Success:', result);
+        return result; // Return the result for chaining
     })
     .catch(error => {
         console.error('Error:', error);
+        throw error; // Re-throw the error for chaining
     });
 }
 
@@ -128,43 +130,37 @@ $("#applyForm").submit((event) => {
     $("#registerToast").toast({ autohide: true, delay: 3000 });
 
     $("#loading-spinner").addClass('show');
-    fetch("https://cicsoft-web-api.onrender.com/user/register", {
-        method: "POST",
-        body: JSON.stringify(applyFormData),
-        headers: requestHeaders,
-    })
-    .then(response => response.json())
-    .then(result => {
-        $("#registerToast").removeClass("bg-warning bg-success bg-danger");
-        if (result["message"] === "Member registered successfully") {
+    
+    // Prepare Sender data
+    const senderData = {
+        email: applyFormData.umass_email,
+        firstname: applyFormData.first_name,
+        lastname: applyFormData.last_name,
+        groups: ["axVjkz"], 
+        trigger_automation: true
+    };
+
+    $("#loading-spinner").addClass('show');
+    
+    // Only send to Sender.net for faster response
+    sendToSender(senderData)
+        .then(result => {
+            $("#registerToast").removeClass("bg-warning bg-success bg-danger");
             $("#registerToast").addClass("bg-success");
             $("#registerToastText").text("You have successfully registered!");
             $("#applyForm").trigger("reset");
-        } else if (result["message"] === "Member already registered") {
-            $("#registerToast").addClass("bg-warning");
-            $("#registerToastText").text("You are already registered with us!");
-            $("#applyForm").trigger("reset");
-        } else {
+            $("#registerToast").toast("show");
+        })
+        .catch(error => {
+            console.log('Error:', error);
+            $("#registerToast").removeClass("bg-warning bg-success bg-danger");
             $("#registerToast").addClass("bg-danger");
-                $("#registerToastText").text(`Something went wrong! ${result["message"]} Try again later.`);
-        }
-        $("#registerToast").toast("show");
-
-        // Send data to Sender
-        sendToSender({
-            email: applyFormData.umass_email,
-            firstname: applyFormData.first_name,
-            lastname: applyFormData.last_name,
-            groups: ["axVjkz"], 
-            trigger_automation: true
-        });
-    })
-    .catch(error => {
-        console.log('Error:', error);
-    })
-    .finally(() => {
+            $("#registerToastText").text("Network error! Please check your connection and try again.");
+            $("#registerToast").toast("show");
+        })
+        .finally(() => {
             $("#loading-spinner").removeClass('show')
-    });
+        });
 });
 
 $('#labSuggestionForm').submit((event) => {
